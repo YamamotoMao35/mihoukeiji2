@@ -1,15 +1,22 @@
-%h1 掲示板
-= form_for(@board) do |f|
-  - if @board.errors.any?
-    - @board.errors.full_messages.each do |err|
-      %font{color: "red"}= err
+.board-wrapper
+  #top-page
+    .header.d-flex
+      .header-title
+        = link_to root_path do
+          %h3 掲示板
+      .search
+        %form.form-inline
+          .form-group.mx-sm-3.mb-2
+            %label.sr-only{for: "inputTopic"} パスワード
+            %input#inputTopic.form-control{placeholder: "記事の名前", type: "text"}/
+          %button.btn.btn-primary.mb-2{type: "submit"} 検索
+      .board-creation
+        = link_to new_board_path do
+          %h3 新規トピック作成
+
+  .board-text
+    - @boards.each do |msg|
+      = msg.id
+      \: #{msg.title} : #{msg.created_at}
       %br/
-  %div= f.text_field :title
-  = f.submit
-  %br/
-%hr/
-- @boards.each do |msg|
-  = msg.id
-  \: #{msg.title} : #{msg.created_at}
-  %br/
-  %br/
+      %br/
