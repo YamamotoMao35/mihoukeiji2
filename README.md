@@ -30,7 +30,7 @@
 - has_many :boards_categories
 - has_many :boards, through: :boards_categories
 
-## boards_categoriesテーブル
+## board_classificationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |board_id|references|null: false, foreign_key: true|
