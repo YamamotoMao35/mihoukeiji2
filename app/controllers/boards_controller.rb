@@ -2,10 +2,10 @@ class BoardsController < ApplicationController
   
   def index
     @boards = Board.board_list
-    @board = Board.new
   end
 
   def new
+    @board = Board.new
   end
 
   # 書き込み
