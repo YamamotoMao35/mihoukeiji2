@@ -14,7 +14,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|category|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
