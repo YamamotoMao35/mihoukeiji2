@@ -1,0 +1,15 @@
+%h1 掲示板
+= form_for(@board) do |f|
+  - if @board.errors.any?
+    - @board.errors.full_messages.each do |err|
+      %font{color: "red"}= err
+      %br/
+  %div= f.text_field :title
+  = f.submit
+  %br/
+%hr/
+- @boards.each do |msg|
+  = msg.id
+  \: #{msg.title} : #{msg.created_at}
+  %br/
+  %br/
