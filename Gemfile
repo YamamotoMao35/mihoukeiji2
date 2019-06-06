@@ -69,3 +69,4 @@ gem "sprockets", "3.7.2"
 gem "will_paginate"
 gem "will_paginate-bootstrap"
 gem 'bootstrap-sass'
+gem 'haml-rails'
