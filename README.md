@@ -18,7 +18,7 @@
 ### Association
 - has_many :messages
 - has_many :boards_categories
-- has_many :categories, through: :boards_categories
+- has_many :categories, through: :board_classifications
 - belongs_to :user
 
 ## categoriesテーブル
@@ -28,7 +28,7 @@
 
 ### Association
 - has_many :boards_categories
-- has_many :boards, through: :boards_categories
+- has_many :boards, through: :board_classifications
 
 ## board_classificationsテーブル
 |Column|Type|Options|
