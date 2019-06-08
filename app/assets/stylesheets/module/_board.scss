@@ -1,0 +1,52 @@
+.board-wrapper{
+  background: url("star.jpg");
+  .container{
+    .header{
+      background-color: #fff;
+      background-repeat: no-repeat;
+    }
+  }
+  #index_header_box{
+    margin: 10px 0px 10px 0px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    padding: 5px 0px 5px 10px;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    background-position: right 10pt bottom 0pt;
+    background-size: 320px 203px;
+    ul {
+      margin: 0px 0px;
+      list-style: none;
+      a {
+        margin: 6px 12px 0 0;
+        color: #4169e1;
+        text-decoration: none;
+      }
+    }
+  }
+  .board-text{
+    .table{
+      margin-bottom: 0px;
+      thead{
+        border-bottom: solid 5px #333333;
+        th{
+          padding: 7px 10px;
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+      tbody{
+        background-color: white;
+      }
+    }
+  }
+  .pagination{
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 3px;
+    border: 1px $secondary solid;
+    background: #ffffff;
+  }
+}
