@@ -1,22 +1,49 @@
-.board-wrapper
-  #top-page
-    .header.d-flex
-      .header-title
-        = link_to root_path do
-          %h3 掲示板
-      .search
-        %form.form-inline
-          .form-group.mx-sm-3.mb-2
-            %label.sr-only{for: "inputTopic"} パスワード
-            %input#inputTopic.form-control{placeholder: "記事の名前", type: "text"}/
-          %button.btn.btn-primary.mb-2{type: "submit"} 検索
-      .board-creation
-        = link_to new_board_path do
-          %h3 新規トピック作成
+.board-wrapper.img-fluid 
+  .container
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-secondary
+      = link_to "みほう掲示板",root_path, class: "navbar-brand"
+      %button.navbar-toggler{"aria-controls": "navbarColor02", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarColor02", "data-toggle": "collapse", type: "button"}
+        %span.navbar-toggler-icon
+      #navbarColor02.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            %a.nav-link{href: "#"}
+              個人ページ
+              %span.sr-only
+          %li.nav-item
+            = link_to "Twitter", "https://twitter.com/MihouTechPeak51", class: "nav-link"
+          %li.nav-item
+            %a.nav-link{href: "#"} ヘルプ
+          %li.nav-item
+            = link_to "スレ新規作成",new_board_path, class: "nav-link"
+        %form.form-inline.my-2.my-lg-0
+          %input.form-control.mr-sm-2{type: "text"}/
+          %button.btn.btn-info.my-2.my-sm-0{type: 'submit'} スレタイ検索
+    #index_header_box
+      %ul
+        %li
+          %h5
+            = link_to "利用規約", "#"
+            = link_to "NGスレ設定", '#'
+            = link_to "お問い合わせ", '#'
+        %li
+          %h4 みほう掲示板です。なんでも宣言OK!
+          %h5
+            %button.btn.btn-primary{type: "button", onclick: "location.href='https://mihoutechpeak.hatenablog.com/archive'"} ブログ
+            で紹介することがあります
 
-  .board-text
-    - @boards.each do |msg|
-      = msg.id
-      \: #{msg.title} : #{msg.created_at}
-      %br/
-      %br/
+    .board-text
+      %table.table
+        %thead
+          %tr.table-success
+            %th{style: "width: 60px"} 全レス
+            %th{scope: "col"} タイトル
+        %tbody
+          %table.table.table-striped.table-hover
+            - @boards.each do |board|
+              %tr.active
+                %th{scope: "row", style: "width: 60px"} #{board.id}
+                %td
+                  = link_to "#{board.title}", "/boards/#{board.id}"
+    %tbody.text-center
+      = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'

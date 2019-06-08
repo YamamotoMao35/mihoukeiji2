@@ -5,7 +5,12 @@
         - @board.errors.full_messages.each do |err|
           %font{color: "red"}= err
           %br/
-      %div= f.text_field :title
-      = f.submit
+      %div
+        %h3 スレッドタイトル(60文字以内)
+        = f.text_field :title
+        = f.submit "新規スレッド作成", class: "btn.btn-info.my-2.my-sm-0"
+      .thread-title
+        %h3 スレッドタグ
+
       %br/
     %hr/
