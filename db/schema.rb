@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_023406) do
+ActiveRecord::Schema.define(version: 2019_06_08_120927) do
 
   create_table "board_classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "board_id"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_06_06_023406) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "body"
+    t.bigint "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_messages_on_board_id"
+  end
+
   add_foreign_key "board_classifications", "boards"
   add_foreign_key "board_classifications", "categories"
+  add_foreign_key "messages", "boards"
 end
