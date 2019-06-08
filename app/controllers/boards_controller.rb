@@ -21,6 +21,12 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @messages = @board.messages
+  end
+
+  def update
+    tweet = Tweet.find(params[:id])
+    tweet.update(tweet_params)
   end
 
   private
