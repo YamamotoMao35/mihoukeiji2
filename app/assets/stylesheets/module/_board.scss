@@ -1,4 +1,5 @@
 .board-wrapper{
+  min-height: 100vh;
   background: url("star.jpg");
   .container{
     .header{
@@ -7,6 +8,7 @@
     }
   }
   .board-text{
+    padding: 0px;
     .table{
       margin-bottom: 0px;
       thead{
@@ -20,11 +22,33 @@
       tbody{
         background-color: white;
         .active{
-          .far.fa-plus-square{
+          .icon-field{
+            background: gray;
+            width: 2rem;
             float: right;
-            padding-right: 20px;
+            padding: 0;
+            height: 100%;
+            .far.fa-plus-square{
+              padding: 0 0.5rem;
+              color: white;
+            }
           }
         }
+      }
+    }
+  }
+  .sidebar{
+    float: right;
+    width: 20%;
+    margin: 10px 0px 10px 0px;
+    min-height: 50vh;
+    padding: 20px;
+    border: solid 1px #ff614c;
+    background-color: #fff;
+    .side-nav{
+      a{
+        color: $orange;
+        text-decoration: none;
       }
     }
   }
