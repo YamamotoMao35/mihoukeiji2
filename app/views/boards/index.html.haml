@@ -4,6 +4,11 @@
     .sidebar.col-sm-3.col-md-3
       .main-side
         - if user_signed_in?
+          %h5 ようこそ
+          = current_user.name
+          さん
+          %h5.side-nav__signin.btn.btn-outline-primary
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           %h5 ゲストさん
           .side-nav-box
