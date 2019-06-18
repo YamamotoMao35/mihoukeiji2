@@ -7,8 +7,10 @@
           %h5 ようこそ
           = current_user.name
           さん
-          %h5.side-nav__signin.btn.btn-outline-primary
+          %h5.btn.btn-outline-primary.mt-2
             = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %h5.btn.btn-outline-secondary.mt-4
+            = link_to "スレ新規作成",new_board_path
         - else
           %h5 ゲストさん
           .side-nav-box
@@ -43,7 +45,8 @@
                 %th{scope: "row", style: "width: 80px"} #{board.id}
                 %td
                   = link_to "#{board.title}", "/boards/#{board.id}"
-                  .icon-field
+                  #icon-plus.icon-field.rounded
                     %i.far.fa-plus-square
+                  #board-description
     %tbody.text-center
       = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'

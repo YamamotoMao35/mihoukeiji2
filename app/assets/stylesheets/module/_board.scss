@@ -21,30 +21,43 @@
       }
       tbody{
         background-color: white;
-        .active{
+        tr.active{
           .icon-field{
             background: gray;
             width: 2rem;
             float: right;
             padding: 0;
             height: 100%;
+            cursor: pointer;
             .far.fa-plus-square{
               padding: 0 0.5rem;
               color: white;
             }
+          }
+          .board-description-box{
+            width: 100%;
+            height: 100px;
+            overflow: scroll;
+            background: #fff;
           }
         }
       }
     }
   }
   .sidebar{
+    position: sticky;
     float: right;
     width: 20%;
-    margin: 10px 0px 10px 0px;
+    margin: 20px 0px 20px 0px;
     min-height: 50vh;
+    top: 20px;
     padding: 20px;
     border: solid 1px #ff614c;
+    border-radius: 10px;
     background-color: #fff;
+    a {
+      text-decoration: none;
+    }
     .side-nav{
       a{
         color: $orange;
