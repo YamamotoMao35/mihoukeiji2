@@ -1,23 +1,24 @@
-.container
+#contact-form.container
+  = link_to "みほう掲示板", root_path
   %h2 新規登録画面
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
       = f.label "名前"
       %br/
-      = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例)みほ太郎"
+      = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例)みほ太郎", class: "form-control required"
     .field
       = f.label "メールアドレス"
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "form-control required"
     .field
       = f.label "パスワード"
       %br/
-      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "form-control required"
     .field
       = f.label "パスワード(確認用)"
       %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "form-control required"
     .actions
-      = f.submit "会員登録"
+      = f.submit "会員登録", id: "submit-form"
   = render "devise/shared/links"
