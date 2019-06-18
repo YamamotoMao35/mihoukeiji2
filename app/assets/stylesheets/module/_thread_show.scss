@@ -1,5 +1,25 @@
 .thread_show{
   background: url("star.jpg");
+  .message-sidevar{
+    position: sticky;
+    float: right;
+    width: 15%;
+    margin: 20px 0 20px 40px;
+    top: 10px;
+    min-height: 30vh;
+    border: solid 1px #ff614c;
+    background-color: #fff;
+    border-radius: 20px;
+    &__arrow{
+      margin-top: 10px;
+      margin-left: 20px;
+      font-size: 60px;
+      top: 20px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
+  }
   .message_area{
     margin-top: 20px;
     .return_board{
@@ -55,6 +75,12 @@
     line-height: 140%;
     font-size: 17px;
     }
+  }
+  .top-return{
+    float: right;
+    font-size: 20px;
+    margin: 0;
+    text-decoration: none;
   }
   .form-group{
     label{
