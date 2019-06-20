@@ -1,76 +1,79 @@
 .board-wrapper{
   min-height: 100vh;
-  background: url("star.jpg");
-  .container{
-    .header{
-      background-color: #fff;
-      background-repeat: no-repeat;
-    }
-  }
-  .board-text{
-    padding: 0px;
-    .table{
-      margin-bottom: 0px;
-      thead{
-        border-bottom: solid 5px #333333;
-        th{
-          padding: 7px 10px;
-          font-size: 13px;
-          font-weight: bold;
-        }
+  background: url("star.jpg") fixed;
+  background-size: cover;
+  .board-index{
+    .container{
+      .header{
+        background-color: #fff;
+        background-repeat: no-repeat;
       }
-      tbody{
-        background-color: white;
-        tr.active{
-          .icon-field{
-            background: gray;
-            width: 2rem;
-            float: right;
-            padding: 0;
-            height: 100%;
-            cursor: pointer;
-            .far.fa-plus-square{
-              padding: 0 0.5rem;
-              color: white;
+    }
+    .board-text{
+      padding: 0px;
+      .table{
+        margin-bottom: 0px;
+        thead{
+          border-bottom: solid 5px #333333;
+          th{
+            padding: 7px 10px;
+            font-size: 13px;
+            font-weight: bold;
+          }
+        }
+        tbody{
+          background-color: white;
+          tr.active{
+            .icon-field{
+              background: gray;
+              width: 2rem;
+              float: right;
+              padding: 0;
+              height: 100%;
+              cursor: pointer;
+              .far.fa-plus-square{
+                padding: 0 0.5rem;
+                color: white;
+              }
+            }
+            .board-description-box{
+              width: 100%;
+              height: 100px;
+              overflow: scroll;
+              background: #fff;
             }
           }
-          .board-description-box{
-            width: 100%;
-            height: 100px;
-            overflow: scroll;
-            background: #fff;
-          }
         }
       }
     }
-  }
-  .sidebar{
-    position: sticky;
-    float: right;
-    width: 20%;
-    margin: 20px 0px 20px 0px;
-    min-height: 50vh;
-    top: 20px;
-    padding: 20px;
-    border: solid 1px #ff614c;
-    border-radius: 10px;
-    background-color: #fff;
-    a {
-      text-decoration: none;
-    }
-    .side-nav{
-      a{
-        color: $orange;
+    .sidebar{
+      position: sticky;
+      float: right;
+      width: 20%;
+      margin: 20px 0px 20px 0px;
+      min-height: 50vh;
+      top: 20px;
+      padding: 20px;
+      border: solid 1px #ff614c;
+      border-radius: 10px;
+      background-color: #fff;
+      a {
         text-decoration: none;
       }
+      .side-nav{
+        a{
+          color: $orange;
+          text-decoration: none;
+        }
+      }
     }
-  }
-  .pagination{
-    display: inline-block;
-    padding-left: 0;
-    margin: 20px 0;
-    border-radius: 3px;
-    border: 1px $secondary solid;
-    background: #ffffff;
+    .pagination{
+      display: inline-block;
+      padding-left: 0;
+      margin: 20px 0;
+      border-radius: 3px;
+      border: 1px $secondary solid;
+      background: #ffffff;
+    }
   }
 }

@@ -1,5 +1,6 @@
 .thread_show{
-  background: url("star.jpg");
+  background: url("star.jpg") fixed;
+  background-size: cover;
   .message-sidevar{
     position: sticky;
     float: right;
