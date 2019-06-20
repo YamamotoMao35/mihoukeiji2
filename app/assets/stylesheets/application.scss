@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "bootswatch";
 @import "font-awesome";
+@import "./mixin/style-mixin";
+@import "./module/form";
 @import "./module/header";
 @import "./module/board";
 @import "./module/thread_create";

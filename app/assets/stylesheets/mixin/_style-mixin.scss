@@ -1,0 +1,33 @@
+@mixin box-size{
+  box-sizing: border-box;
+}
+
+@mixin page-body{
+  position: relative;
+  min-height: 100vh;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
+
+@mixin select-box{
+  outline: none;
+  text-indent: 0.01px;
+  vertical-align: middle;
+  color: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+}
+
+@mixin arrow-down{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 24px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
