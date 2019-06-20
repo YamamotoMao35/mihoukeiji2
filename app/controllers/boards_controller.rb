@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:show, :update]
   before_action :move_to_index,except: [:index, :show]
 
   def index
@@ -20,18 +21,20 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
     @messages = @board.messages
   end
 
   def update
-    tweet = Tweet.find(params[:id])
-    tweet.update(tweet_params)
+    @board.update(board_params)
   end
 
   private
   def board_params
     params.require(:board).permit(:title, :description, category_ids: []).merge(user_id: current_user.id)
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 
   def move_to_index
