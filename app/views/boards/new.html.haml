@@ -1,16 +1,26 @@
-.topic-create
-  .container
-    = form_with model: @board, local: true do |f|
-      - if @board.errors.any?
-        - @board.errors.full_messages.each do |err|
-          %font{color: "red"}= err
-          %br/
-      %div
-        %h3 スレッドタイトル(60文字以内)
-        = f.text_field :title
-        = f.submit "新規スレッド作成", class: "btn.btn-info.my-2.my-sm-0"
-      .thread-title
-        %h3 スレッドタグ
-
-      %br/
-    %hr/
+.board-create
+  .topic-wrapper.pt-4
+    #contact-form.container
+      = link_to "掲示板へ戻る", root_path, class: "return-board"
+      = form_with model: @board, local: true do |f|
+        - if @board.errors.any?
+          - @board.errors.full_messages.each do |err|
+            %font{color: "red"}= err
+            %br/
+        .thread-title.d-flex
+          %h3 スレッドタイトル
+          %span.form-require 必須
+        .form-group
+          = f.text_field :title, placeholder: "スレの名前を入力してください(60文字以内)", class: "form-control required"
+        .thread-description.d-flex
+          %h3 スレ説明
+          %span.form-require 必須
+        .form-group
+          = f.text_area :description, placeholder: "スレの説明を入力してください(1000文字以内)",style: {cols: 50, rows: 20}, class: "form-control required", id: "thread-description"
+        .thread-category.d-flex
+          %h3 スレッドカテゴリ
+          %span.form-require 必須
+        .form-group
+          = f.collection_select :category_ids, Category.all, :id, :name,{prompt: "---"}, class: "form-control required", id: "category-form", name: 'board[category_ids][]'
+          %i.fas.fa-angle-down
+        = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg", id: "submit-form"
