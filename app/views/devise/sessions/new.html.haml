@@ -1,19 +1,29 @@
-#contact-form.container
-  = link_to "みほう掲示板", root_path
-  %h2 ログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label "メールアドレス"
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control required"
-    .field
-      = f.label "パスワード"
-      %br/
-      = f.password_field :password, autocomplete: "current-password", class: "form-control required"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "ログイン", id: "submit-form"
-  = render "devise/shared/links"
+.login-page
+  .login-container.col-sm-8.col-md-8
+    #contact-form.container
+      .return_board.d-flex.col-sm-6.col-md-6
+        = link_to root_path, class: "return" do
+          みほう掲示板に戻る
+          %i.fas.fa-undo
+      %h2.mt-4 ログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          = f.label "メールアドレス"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control required"
+        .form-group
+          = f.label "パスワード"
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class: "form-control required"
+        - if devise_mapping.rememberable?
+          .chkbox
+            = f.check_box :remember_me, class: "form-check-input"
+            = f.label :remember_me, class: "form-check-label"
+        .actions.d-flex
+          = f.submit "ログイン", id: "submit-form", class: "btn btn-secondary btn-lg"
+      .page-links
+        .page-links__registration
+          %h4.notice ※登録がお済みになっていない場合
+          = link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-registration-link"
+        .page-links__password
+          = link_to "パスワードをお忘れの方", new_user_password_path, class: "btn btn-forget-password"
