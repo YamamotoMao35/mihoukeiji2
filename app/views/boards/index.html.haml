@@ -1,0 +1,55 @@
+.board-wrapper.img-fluid
+  .board-index
+    .container
+      = render "header"
+      .sidebar.col-sm-3.col-md-3
+        .main-side
+          - if user_signed_in?
+            %h5 ようこそ
+            = current_user.name
+            さん
+            %h5.btn.btn-outline-primary.mt-2
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+            %h5.btn.btn-outline-secondary.mt-4
+              = link_to "スレ新規作成",new_board_path
+          - else
+            %h5 ゲストさん
+            .side-nav-box
+              .side-nav
+                %h5.side-nav__signin.btn.btn-outline-primary
+                  = link_to "新規会員登録",new_user_registration_path
+                %h5.side-nav__login.btn.btn-outline-primary
+                  = link_to "ログイン",new_user_session_path
+      #index_header_box.col-sm-9.col-md-9
+        %ul
+          %li
+            %h5
+              = link_to "書き込み注意", "#"
+              = link_to "ヘルプ", '#'
+              = link_to "お問い合わせ", '#'
+          %li
+            %h4 みほう掲示板です。なんでも宣言OK!
+            %h5
+              %button.btn.btn-primary{type: "button", onclick: "location.href='https://mihoutechpeak.hatenablog.com/archive'"} ブログ
+              で紹介することがあります
+
+      .board-text.col-sm-9.col-md-9
+        %table.table
+          %thead
+            %tr.table-success
+              %th{style: "width: 80px"} 全レス
+              %th{scope: "col"} タイトル
+          %tbody
+            %table.table.table-striped.table-hover
+              - @boards.each do |board|
+                %tr.active
+                  %th{scope: "row", style: "width: 80px"} #{board.id}
+                  %td
+                    = link_to "#{board.title}", "/boards/#{board.id}"
+                    #icon-plus.icon-field.rounded{"data-toggle": "collapse", "data-target": "#collapseExample", "aria-expanded": "false", "aria-controls": "collapseExample"}
+                      %i.far.fa-plus-square
+                    #collapseExample.collapse
+                      .card.card-body
+                        = "#{board.description}"
+      %tbody.text-center
+        = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'

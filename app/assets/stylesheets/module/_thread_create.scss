@@ -1,0 +1,41 @@
+.board-create{
+  background-color: #e6e6e6;
+  line-height: 150%;
+  @include page-body;
+  .topic-wrapper{
+    .container{
+      border-radius: 20px;
+      padding: 20px 40px;
+      background-color: $primary;
+      .return-board{
+        font-weight: 600;
+        color: $dark;
+        font-size: 30px;
+        text-decoration: none;
+      }
+      .thread-title{
+        margin-top: 15px;
+      }
+      span {
+        background: red;
+        height: 30px;
+      }
+      .form-control{
+        padding: 10px 16px;
+      }
+      .form-group{
+        width: 60%;
+        position: relative;
+        .fas.fa-angle-down{
+          @include arrow-down;
+        }
+        #thread-description{
+          overflow: scroll;
+        }
+        #category-form{
+          height: 40px;
+        }
+      }
+    }
+  }
+}

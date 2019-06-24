@@ -1,0 +1,50 @@
+.thread_show
+  .contents.row
+    .container
+      = render "header"
+      .message-sidevar.col-sm-2.col-md-2
+        #angle-up.message-sidevar__arrow
+          %i.fas.fa-angle-double-up
+        #angle-down.message-sidevar__arrow
+          %i.fas.fa-angle-double-down
+      .jumbotron.bd-light.message_area.col-sm-10.col-md-10
+        .return_board
+          %h2
+            =link_to "掲示板に戻る", root_path
+            %i.fas.fa-undo
+        .board_title
+          %h1
+            = @board.title
+        %h4 <レス一覧＞
+        .message-box
+          - if @messages
+            - @messages.each do |message|
+              .message-box__info.d-flex
+                .message-name
+                  = message.name
+                  %span @高みを目指す
+                .message-date
+                  = message.created_at.strftime("%Y/%m/%d %H:%M")
+              .message-box__text
+                %pre
+                  = message.body
+      .jumbotron.bg-light.d-flex.col-sm-10.col-md-10
+        = form_with(url:"/boards/#{@board.id}/messages",method: :post,local: true) do |f|
+          #contact-form.form-group
+            = f.label "レスを投稿する"
+            - if user_signed_in?
+              = f.text_field :name, placeholder: "名前(省略可)", class: "respond_name",value: "#{current_user.name}"
+            - else
+              = f.text_field :name, placeholder: "名前(省略可)", class: "respond_name"
+            - if user_signed_in?
+              = f.email_field :email, placeholder: "メールアドレス(省略可)", class: "respond_name", value: "#{current_user.email}"
+            - else
+              = f.email_field :email, placeholder: "メールアドレス(省略可)", class: "respond_name"
+            = f.text_area :body, name: "body",placeholder: "宣言ならなんでもOK\n1000文字以内",style: {cols: 80, rows: 12}, class: "respond_area required"
+          = f.submit "書き込む" ,class: 'text-light btn btn-primary btn-lg respond-btn', id: "submit-form"
+        = link_to "トップページに戻る", root_path, class: "top-return"
+
+      %blockquote
+        書き込み前に
+        = link_to "利用規約", "#"
+        を確認してください

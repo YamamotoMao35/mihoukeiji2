@@ -1,0 +1,95 @@
+.login-page{
+  min-height: 100vh;
+  background: url("cosmos.jpg") fixed;
+  background-size: cover;
+  .login-container{
+    padding: 30px 0;
+    margin: 0 auto;
+  }
+  .container{
+    @include user-box;
+    @include box-size;
+    .return_board{
+      display: block;
+      height: 100%;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 26px;
+      a{
+        color: $primary;
+        background: $light;
+        text-decoration: none;
+      }
+      .fas.fa-undo{
+        color: blue;
+      }
+    }
+    h2{
+      @include user-title;
+    }
+    .form-group{
+      label{
+        font-weight: bold;
+        font-size: 16px;
+        color: $light;
+      }
+    }
+    .chkbox input[type=checkbox] {
+      display: none;
+    }
+    .chkbox{
+      margin: 10px 0px;
+      label{
+        padding-left: 30px;
+        font-size: 24px;
+        line-height: 24px;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        &:before{
+          content: '';
+          width: 24px;			/* ボックスの横幅 */
+          height: 24px;			/* ボックスの縦幅 */
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          background-color:	#fff;
+          box-shadow: inset 1px 2px 3px 0px #000;
+          border-radius: 6px;
+        }
+      }
+    }
+    .chkbox input[type=checkbox]:checked + label:before {
+      content:		'\2713';		/* チェックの文字 */ 
+      font-size:		28px;			/* チェックのサイズ */
+      color:			#fff;			/* チェックの色 */
+      background-color:	#06f;			/* チェックした時の色 */
+    }
+    .actions{
+      padding: 0 auto;
+      .btn.btn-secondary{
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    .page-links{
+      &__registration{
+        margin: 20px 0px;
+        .notice {
+          color: $pink;
+        }
+        .btn-registration-link{
+          @include user-btn;
+        }
+      }
+      &__password{
+        .btn-forget-password{
+          font-size: 22px;
+          color: #0099e8;
+          background-color: #fff;
+          border-color: magenta;
+        }
+      }
+    }
+  }
+}
