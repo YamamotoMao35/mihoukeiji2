@@ -61,9 +61,11 @@
       color: $pink;
       margin-top: 20px;
     }
-    .login_link{
-      font-size: 26px;
-      color: $light;
+    .btn-login-link{
+      font-size: 22px;
+      color: #0099e8;
+      background-color: #fff;
+      border-color: $success;
     }
   }
 }
