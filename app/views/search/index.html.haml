@@ -1,0 +1,24 @@
+.board-wrapper.img-fluid
+  .board-index
+    .container
+      = render 'boards/header'
+      .sidebar.col-sm-3.col-md-3
+        = render "boards/sidebar"
+      .search-contents
+      - if (@board.length != 0)
+        .search-word.col-sm-9.col-md-9
+          %h3 #{@search_title}の検索結果
+        .wrapper.clearfix
+          %section
+            .board-text.col-sm-9.col-md-9
+              %table.table
+                %thead
+                  %tr.table-success
+                    %th{style: "width: 80px"} 全レス
+                    %th{scope: "col"} タイトル
+                %tbody
+                  %table.table.table-striped.table-hover
+                    = render partial: 'boards/pickup', collection: @board, as: :board
+      - else
+        .search-word.col-sm-9.col-md-9
+          %h3 スレッドがありません。
