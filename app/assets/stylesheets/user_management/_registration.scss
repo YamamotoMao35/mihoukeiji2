@@ -1,0 +1,69 @@
+.registration-page{
+  height: 100vh;
+  background: url("amanogawa.jpg") fixed;
+  background-size: cover;
+  .registration-container{
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+  .container{
+    margin: 0 auto;
+    padding: 20px;
+    background-color: $info;
+    border-radius: 20px;
+    @include box-size;
+      .return_board{
+        display: block;
+        height: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 26px;
+        a{
+          color: $primary;
+          background: $light;
+          text-decoration: none;
+        }
+        .fas.fa-undo{
+          color: blue;
+        }
+      }
+    h2{
+      width: 40%;
+      margin: 0 auto;
+      padding: 10px 16px;
+      border: 1px solid $secondary;
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+      font-family: 'Courier';
+      color: $info;
+    }
+    .form-group{
+      label{
+        font-weight: bold;
+        font-size: 16px;
+        color: $light;
+      }
+      span {
+        background: red;
+        height: 30px;
+        border-radius: 4px;
+      }
+    }
+    .actions{
+      padding: 0 auto;
+      .btn.btn-secondary{
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    .notice {
+      color: $pink;
+      margin-top: 20px;
+    }
+    .login_link{
+      font-size: 26px;
+      color: $light;
+    }
+  }
+}
