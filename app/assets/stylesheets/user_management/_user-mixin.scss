@@ -1,0 +1,25 @@
+@mixin user-box{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $info;
+  border-radius: 20px;
+}
+
+@mixin user-title{
+  margin: 0 auto;
+  padding: 10px 16px;
+  border: 1px solid $secondary;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  font-family: 'Courier';
+  color: $info;
+  margin-bottom: 30px;
+}
+
+@mixin user-btn{
+  font-size: 22px;
+  color: #0099e8;
+  background-color: #fff;
+  border-color: $success;
+}
