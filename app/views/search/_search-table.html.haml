@@ -1,0 +1,11 @@
+.wrapper.clearfix
+  %section
+    .board-text.col-sm-9.col-md-9
+      %table.table
+        %thead
+          %tr.table-success
+            %th{style: "width: 80px"} 全レス
+            %th{scope: "col"} タイトル
+        %tbody
+          %table.table.table-striped.table-hover
+            = render partial: 'boards/pickup', collection: @board, as: :board
