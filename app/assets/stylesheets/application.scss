@@ -8,7 +8,9 @@
 @import "./module/board";
 @import "./module/thread_create";
 @import "./module/thread_show";
+@import "./user_management/user-mixin";
 @import "./user_management/registration";
 @import "./user_management/login-page";
+@import "./user_management/forgot-page";
 @import "prism-okaida";
 @import "validatrix";
