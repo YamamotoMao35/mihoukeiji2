@@ -1,28 +1,23 @@
 crumb :root do
-  link "Home", root_path
+  link "みほう掲示板", root_path
 end
 
-# crumb :projects do
-#   link "Projects", projects_path
-# end
+crumb :create_board do
+  link "新規スレッド作成"
+end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+crumb :login do
+  link "ログイン画面"
+end
 
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
+crumb :registration do
+  link "新規登録画面"
+end
 
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
+crumb :board do
+  link "#{board.title}"
+end
 
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).
+crumb :search do |search_word|
+  link "#{search_word}"
+end
