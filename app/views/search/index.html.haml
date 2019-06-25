@@ -2,6 +2,8 @@
   .board-index
     .container
       = render 'boards/header'
+      - breadcrumb :search, @search_title
+      = render 'layouts/breadcrumbs'
       .sidebar.col-sm-3.col-md-3
         = render "boards/sidebar"
       .search-contents

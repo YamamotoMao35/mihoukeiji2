@@ -2,16 +2,14 @@
   .contents.row
     .container
       = render "header"
+      - breadcrumb :board, @board
+      = render 'layouts/breadcrumbs'
       .message-sidevar.col-sm-2.col-md-2
         #angle-up.message-sidevar__arrow
           %i.fas.fa-angle-double-up
         #angle-down.message-sidevar__arrow
           %i.fas.fa-angle-double-down
       .jumbotron.bd-light.message_area.col-sm-10.col-md-10
-        .return_board
-          %h2
-            =link_to "掲示板に戻る", root_path
-            %i.fas.fa-undo
         .board_title
           %h1
             = @board.title
@@ -42,7 +40,7 @@
               = f.email_field :email, placeholder: "メールアドレス(省略可)", class: "respond_name"
             = f.text_area :body, name: "body",placeholder: "宣言ならなんでもOK\n1000文字以内",style: {cols: 80, rows: 12}, class: "respond_area required"
           = f.submit "書き込む" ,class: 'text-light btn btn-primary btn-lg respond-btn', id: "submit-form"
-        = link_to "トップページに戻る", root_path, class: "top-return"
+        = link_to "みほう掲示板に戻る", root_path, class: "top-return"
 
       %blockquote
         書き込み前に

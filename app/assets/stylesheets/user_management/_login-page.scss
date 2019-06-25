@@ -9,22 +9,7 @@
   .container{
     @include user-box;
     @include box-size;
-    .return_board{
-      display: block;
-      height: 100%;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      font-size: 26px;
-      a{
-        color: $primary;
-        background: $light;
-        text-decoration: none;
-      }
-      .fas.fa-undo{
-        color: blue;
-      }
-    }
-    h2{
+    h3{
       @include user-title;
     }
     .form-group{

@@ -1,0 +1,16 @@
+.bread-crumbs{
+  margin: 10px 0px;
+  ul{
+    padding-left: 0px;
+  }
+  li.breadcrumb{
+    font-size: 24px;
+    background: #fff;
+    a {
+      color: #4169e1;
+    }
+    span{
+      color: #4169e1;
+    }
+  }
+}
