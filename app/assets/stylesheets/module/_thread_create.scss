@@ -13,12 +13,11 @@
         font-size: 30px;
         text-decoration: none;
       }
-      .thread-title{
-        margin-top: 15px;
-      }
-      span {
-        background: red;
-        height: 30px;
+      &__description{
+        span {
+          background: red;
+          height: 30px;
+        }
       }
       .form-control{
         padding: 10px 16px;
