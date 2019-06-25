@@ -34,6 +34,11 @@
                       %i.far.fa-plus-square
                     #collapseExample.collapse
                       .card.card-body
-                        = "#{board.description}"
+                        .board-description
+                          #{board.description}
+                        .board-category.d-flex
+                          カテゴリ名:
+                          .category-name
+                            #{board.categories[0].name}
       %tbody.text-center
         = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'
