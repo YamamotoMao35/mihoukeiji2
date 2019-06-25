@@ -7,17 +7,17 @@ crumb :create_board do
 end
 
 crumb :login do
-  link "ログイン画面"
+  link "ログイン"
 end
 
 crumb :registration do
-  link "新規登録画面"
+  link "新規会員登録"
 end
 
-crumb :board do
+crumb :board do |board|
   link "#{board.title}"
 end
 
-crumb :search do |search_word|
-  link "#{search_word}"
+crumb :search do |search_title|
+  link "#{search_title}"
 end
