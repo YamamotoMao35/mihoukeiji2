@@ -1,11 +1,9 @@
 .login-page
   .login-container.col-sm-8.col-md-8
     #contact-form.container
-      .return_board.d-flex.col-sm-6.col-md-6
-        = link_to root_path, class: "return" do
-          みほう掲示板に戻る
-          %i.fas.fa-undo
-      %h2.mt-4.col-sm-6.col-md-6 ログイン
+      - breadcrumb :login
+      = render 'layouts/breadcrumbs'
+      %h3.mt-4.col-sm-5.col-md-5 ログイン
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-group
           = f.label "メールアドレス"
