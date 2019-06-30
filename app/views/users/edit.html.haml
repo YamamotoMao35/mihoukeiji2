@@ -9,9 +9,9 @@
         = form_with model: @user, local: true do |f|
           .form-group
             = f.label :name
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, autofocus: true, placeholder: "例)みほ太郎", class: "form-control required"
           .form-group
             = f.label :email
-            = f.email_field :email
+            = f.email_field :email,placeholder: "PC・携帯どちらでも可", class: "form-control required"
           .actions.d-flex
             = f.submit "情報更新", id: "submit-form",class: 'btn btn-secondary btn-lg'
