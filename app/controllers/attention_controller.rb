@@ -4,4 +4,7 @@ class AttentionController < ApplicationController
 
   def assistance
   end
+
+  def privacy_policy
+  end
 end

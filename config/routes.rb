@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "search/index"
   get "attention/term"
   get "attention/assistance"
+  get "attention/privacy_policy"
   resources :boards, only: [:index, :new, :create, :show, :update] do
     resources :messages, only: [:create]
   end
