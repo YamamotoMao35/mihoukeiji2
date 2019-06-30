@@ -14,6 +14,18 @@ crumb :registration do
   link "新規会員登録"
 end
 
+crumb :term do
+  link "利用規約"
+end
+
+crumb :privacy_policy do
+  link "プライバシーポリシー"
+end
+
+crumb :assistance do
+  link "ヘルプ"
+end
+
 crumb :board do |board|
   link "#{board.title}"
 end

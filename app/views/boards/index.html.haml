@@ -8,9 +8,9 @@
         %ul
           %li
             %h5
-              = link_to "書き込み注意", "#"
-              = link_to "ヘルプ", '#'
-              = link_to "お問い合わせ", '#'
+              = link_to "利用規約", attention_term_path
+              = link_to "プライバシーポリシー", attention_privacy_policy_path
+              = link_to "ヘルプ", attention_assistance_path
           %li
             %h4 みほう掲示板です。なんでも宣言OK!
             %h5
@@ -34,6 +34,11 @@
                       %i.far.fa-plus-square
                     #collapseExample.collapse
                       .card.card-body
-                        = "#{board.description}"
+                        .board-description
+                          #{board.description}
+                        .board-category.d-flex
+                          カテゴリ名:
+                          .category-name
+                            #{board.categories[0].name}
       %tbody.text-center
         = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'
