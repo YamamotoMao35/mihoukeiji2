@@ -10,5 +10,8 @@
           %span.sr-only
       %li.nav-item.active
         = link_to "Twitter", "https://twitter.com/MihouTechPeak51", class: "nav-link"
+      - if user_signed_in?
+        %li.nav-item.active
+          = link_to "マイページ", user_path(current_user), class: "nav-link"
     .form-inline.my-2.my-lg-0
       = render "boards/search-form"
