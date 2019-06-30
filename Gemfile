@@ -71,4 +71,4 @@ gem "will_paginate-bootstrap"
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'gretel'
-gem 'mini_magick'
+gem "google-cloud-storage", "~> 1.8", require: false
