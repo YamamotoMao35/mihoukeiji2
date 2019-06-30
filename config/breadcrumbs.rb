@@ -26,6 +26,20 @@ crumb :assistance do
   link "ヘルプ"
 end
 
+crumb :user do
+  link 'マイページ', user_path(current_user.id)
+end
+
+crumb :user_edit do
+  link 'ユーザー編集'
+  parent :user
+end
+
+crumb :withdrawal do
+  link '退会'
+  parent :user
+end
+
 crumb :board do |board|
   link "#{board.title}"
 end
