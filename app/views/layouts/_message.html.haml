@@ -1,0 +1,12 @@
+.board-message
+  .message-box__info.d-flex
+    .message-name
+      = message.name
+      %span @高みを目指す
+    .message-date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .message-box__text
+    %pre
+      = message.body
+    - if message.image.attached?
+      = image_tag message.image
