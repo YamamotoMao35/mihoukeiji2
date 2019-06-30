@@ -1,0 +1,10 @@
+.mypage
+  .mypage-wrapper
+    .container
+      = render 'boards/header'
+      - breadcrumb :user
+      = render 'layouts/breadcrumbs'
+      %h5.btn.btn-outline-primary.mt-2
+        = link_to "ユーザー編集", edit_user_path
+      %h5.btn.btn-outline-primary.mt-2
+        = link_to "退会", withdrawal_user_path
