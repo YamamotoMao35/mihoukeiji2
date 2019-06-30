@@ -3,3 +3,9 @@
     #contact-form.container
       - breadcrumb :withdrawal
       = render 'layouts/breadcrumbs'
+      .withdrawal-title
+        %h5 退会手続き
+      .withdrawal-inner
+        = form_with(url: "/users/#{@user.id}", method: :delete, local: true) do |f|
+          .actions.d-flex
+            = f.submit "退会", class: 'btn btn-secondary btn-lg'
