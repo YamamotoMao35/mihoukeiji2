@@ -18,6 +18,10 @@ crumb :term do
   link "利用規約"
 end
 
+crumb :assistance do
+  link "ヘルプ"
+end
+
 crumb :board do |board|
   link "#{board.title}"
 end
