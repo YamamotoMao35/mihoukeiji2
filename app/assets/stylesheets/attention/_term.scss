@@ -1,0 +1,50 @@
+.terms-page{
+  min-height: 100vh;
+  .container{
+    &__head{
+      .bread-crumbs{
+        background: #F8E0E0;
+        li.breadcrumb{
+          background: #F8E0E0;;
+        }
+      }
+    }
+    .terms{
+      &__title{
+        background: $primary;
+        padding: 10px 16px;
+      }
+      &__head{
+        margin-top: 10px;
+        p{
+          font-size: 20px;
+          font-weight: 300;
+        }
+      }
+      &__contents{
+        h2{
+          border-bottom: 1px solid #666666;
+          border-left: 5px solid #666666;
+          padding: 0px 0px 3px 10px;
+          margin-bottom: 5px;
+        }
+        p{
+          font-size: 20px;
+          margin: 20px 0px;
+        }
+        ul{
+          list-style: none;
+          font-size: 20px;
+          margin: 20px 0px;
+        }
+        .text-right{
+          text-align: right;
+          font-size: 30px;
+          font-weight: bold;
+          color: black;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
