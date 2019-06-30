@@ -1,0 +1,17 @@
+.user-edit-page
+  .edit-container.col-sm-8.col-md-8
+    #contact-form.container
+      - breadcrumb :user_edit
+      = render 'layouts/breadcrumbs'
+      .edit-title
+        %h5 アカウントの編集
+      .edit-page-inner
+        = form_with model: @user, local: true do |f|
+          .form-group
+            = f.label :name
+            = f.text_field :name, autofocus: true
+          .form-group
+            = f.label :email
+            = f.email_field :email
+          .actions.d-flex
+            = f.submit "情報更新", id: "submit-form",class: 'btn btn-secondary btn-lg'
