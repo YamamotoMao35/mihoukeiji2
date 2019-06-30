@@ -6,6 +6,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.permit(:body,:name, :email, :board_id)
+    params.permit(:body, :image, :name, :email, :board_id)
   end
 end
