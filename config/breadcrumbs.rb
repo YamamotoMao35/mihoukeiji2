@@ -18,6 +18,10 @@ crumb :term do
   link "利用規約"
 end
 
+crumb :privacy_policy do
+  link "プライバシーポリシー"
+end
+
 crumb :assistance do
   link "ヘルプ"
 end
