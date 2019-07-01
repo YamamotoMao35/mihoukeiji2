@@ -5,13 +5,16 @@
   #navbarColor02.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
       %li.nav-item.active
-        %a.nav-link{href: "#"}
-          個人ページ
-          %span.sr-only
+        = link_to "個人ページ", "#", class: "nav-link"
+        %span.sr-only
       %li.nav-item.active
         = link_to "Twitter", "https://twitter.com/MihouTechPeak51", class: "nav-link"
       - if user_signed_in?
-        %li.nav-item.active
-          = link_to "マイページ", user_path(current_user), class: "nav-link"
+        %li.nav-item.dropdown.active
+          %a.nav-link.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", role: "button", style: "outline-width: 0px !important; user-select: auto !important;"} #{current_user.name}
+          .dropdown-menu{style: "position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;", "x-placement": "bottom-start"}
+            = link_to "マイページ", user_path(current_user), class: "dropdown-item"
+            = link_to "ヘルプ", attention_assistance_path, class: "dropdown-item"
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item"
     .form-inline.my-2.my-lg-0
       = render "boards/search-form"
