@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :boards, only: [:index, :new, :create, :show, :update] do
     resources :messages, only: [:create]
   end
+
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    get :withdrawal, on: :member
+  end
 end

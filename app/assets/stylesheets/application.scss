@@ -3,6 +3,7 @@
 @import "bootswatch";
 @import "font-awesome";
 @import "./mixin/style-mixin";
+@import "./module/notification";
 @import "./module/form";
 @import "./module/header";
 @import "./module/board";
@@ -10,11 +11,15 @@
 @import "./module/table";
 @import "./attention/term";
 @import "./attention/assistance";
+@import "./mypage/mypage";
+@import "./mypage/mypage-sidebar";
 @import "./module/thread_create";
 @import "./module/thread_show";
 @import "./user_management/user-mixin";
 @import "./user_management/registration";
 @import "./user_management/login-page";
 @import "./user_management/forgot-page";
+@import "./user_management/user-edit";
+@import "./user_management/user-withdrawal";
 @import "prism-okaida";
 @import "validatrix";

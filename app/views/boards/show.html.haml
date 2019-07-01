@@ -4,19 +4,19 @@
       = render "header"
       - breadcrumb :board, @board
       = render 'layouts/breadcrumbs'
-      .message-sidevar.col-sm-2.col-md-2
-        #angle-up.message-sidevar__arrow
+      .message-sidebar.col-sm-2.col-md-2
+        #angle-up.message-sidebar__arrow
           %i.fas.fa-angle-double-up
-        #angle-down.message-sidevar__arrow
+        #angle-down.message-sidebar__arrow
           %i.fas.fa-angle-double-down
-      .jumbotron.bd-light.message_area.col-sm-10.col-md-10
+      .jumbotron.bd-light.message_area.col-sm-9.col-md-9
         .board_title
           %h1
             = @board.title
         %h4 <レス一覧＞
         .message-box
           = render partial: "layouts/message", collection: @messages, as: "message"
-      .jumbotron.bg-light.respond_create.col-sm-10.col-md-10
+      .jumbotron.bg-light.respond_create.col-sm-9.col-md-9
         = form_with(url:"/boards/#{@board.id}/messages",method: :post,local: true) do |f|
           #contact-form.form-group
             = f.label "レスを投稿する"

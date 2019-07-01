@@ -1,0 +1,50 @@
+.mypage{
+  min-height: 100vh;
+  background: url("moon_surface.jpg") fixed;
+  background-size: cover;
+  .container{
+    @include box-size;
+    .user-table{
+      background: $white;
+      padding: 0 10px 10px 0;
+      border: 2px solid $secondary;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      .mypage-title{
+        width: 30%;
+        background-color: $gray-600;
+        height: 30px;
+        border-radius: 10px 0 10px 0;
+        text-align: center;
+        padding: 5px;
+        h5{
+          color: $white;
+          margin: auto 0;
+        }
+      }
+      .table_created{
+        padding: 5px 10px;
+        h3{
+          color: $blue
+        }
+        span{
+          line-height: 1.75rem;
+          font-size: 1.75rem;
+        }
+      }
+      .board-text{
+        padding: 0px 10px;
+        .table.table-striped{
+          border: 1px solid #eceeef;
+        }
+      }
+    }
+    .user-info{
+      padding: 0 10px 10px 0;
+      border: 2px solid $secondary;
+      border-radius: 5px;
+      background: $white;
+      margin-bottom: 30px;
+    }
+  }
+}

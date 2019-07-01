@@ -1,0 +1,34 @@
+.mypage-sidebar
+  .user-info__title
+    %h5 ユーザー情報
+  .user-info__id.d-flex.ml-2
+    %h5 ユーザーID：
+    %span= current_user.id
+  .user-info__name.d-flex.ml-2
+    .user-name.d-flex
+      %h4=@name
+      %span さん
+    %h5.btn.btn-outline-info
+      = link_to "ユーザー編集", edit_user_path
+  .user-info__boards-count.d-flex.ml-2
+    %h5 スレッド作成回数：
+    %span= @boards.length
+  .user-info__profile
+    .user-info__profile--text.border-top.border-bottom
+      %p あああああ
+    .user-info__profile--icon.border-top.border-bottom
+      .blog-icon
+        %i.fas.fa-link
+        %span みほうサイト
+      .prefecture-icon
+        %i.fas.fa-map-marker-alt
+        %span 兵庫県
+      .profile-link-icon
+        %i.fas.fa-cog
+        = link_to "プロフィールを編集する", "#"
+  .thread-create.ml-2
+    %h5.btn.btn-outline-primary.mt-2
+      = link_to "新規スレッド作成", new_board_path
+  .user-info__withdrawal.ml-2
+    %h5.btn.btn-outline-warning.mt-2
+      = link_to "アカウント削除", withdrawal_user_path

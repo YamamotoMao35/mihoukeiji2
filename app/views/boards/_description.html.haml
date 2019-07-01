@@ -1,9 +1,14 @@
 %tr.active
-  %th{scope: "row", style: "width: 80px"} #{board.id}
+  %th{scope: "row", style: "width: 100px"} #{board.id}
   %td
     = link_to "#{board.title}", "/boards/#{board.id}"
     #icon-plus.icon-field.rounded{"data-toggle": "collapse", "data-target": "#collapseExample", "aria-expanded": "false", "aria-controls": "collapseExample"}
       %i.far.fa-plus-square
     #collapseExample.collapse
       .card.card-body
-        = "#{board.description}"
+        .board-description
+          #{board.description}
+        .board-category.d-flex
+          %h5 カテゴリ名：
+          %span
+            #{board.categories[0].name}

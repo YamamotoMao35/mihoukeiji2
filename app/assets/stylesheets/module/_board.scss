@@ -9,12 +9,10 @@
         background-repeat: no-repeat;
       }
     }
-    .sidebar{
+    .board-sidebar{
       position: sticky;
-      float: right;
-      width: 20%;
       margin: 20px 0px 20px 0px;
-      min-height: 50vh;
+      min-height: 30vh;
       top: 20px;
       padding: 20px;
       border: solid 1px #ff614c;
@@ -22,6 +20,7 @@
       background-color: #fff;
       a {
         text-decoration: none;
+        color: $blue;
       }
       .side-nav{
         a{

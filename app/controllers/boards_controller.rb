@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
     if @board.save
-      redirect_to root_path
+      redirect_to root_path, notice: "スレッドが作成されました"
     else
       redirect_to new_board_path
     end

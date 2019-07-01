@@ -1,38 +1,62 @@
 .board-create{
-  background-color: #e6e6e6;
-  line-height: 150%;
+  background: $gray-300 fixed;
+  background-size: cover;
   @include page-body;
   .topic-wrapper{
     .container{
       border-radius: 20px;
       padding: 20px 40px;
       background-color: $primary;
-      .return-board{
-        font-weight: 600;
-        color: $dark;
-        font-size: 30px;
-        text-decoration: none;
-      }
-      &__description{
-        span {
-          background: red;
+      .board-create-inner{
+        background: $white;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        &__title{
+          width: 30%;
+          background-color: $gray-600;
           height: 30px;
+          border-radius: 10px 0 10px 0;
+          text-align: center;
+          padding: 5px;
+          margin-bottom: 15px;
+          h5{
+            color: $white;
+            margin: auto 0;
+          }
         }
-      }
-      .form-control{
-        padding: 10px 16px;
-      }
-      .form-group{
-        width: 60%;
-        position: relative;
-        .fas.fa-angle-down{
-          @include arrow-down;
+        &__description{
+          padding-left: 1.5rem;
+          margin-bottom: 15px;
+          label{
+            color: $black;
+            font-size: 18px;
+            margin-bottom: 0;
+            padding: 8px 4px;
+          }
+          span {
+            background: red;
+            font-size: 18px;
+          }
         }
-        #thread-description{
-          overflow: scroll;
+        .form-control{
+          padding: 10px 16px;
         }
-        #category-form{
-          height: 40px;
+        .form-group{
+          padding-left: 1.5rem;
+          width: 60%;
+          position: relative;
+          .fas.fa-angle-down{
+            @include arrow-down;
+          }
+          #thread-description{
+            overflow: scroll;
+          }
+          #category-form{
+            height: 40px;
+          }
+        }
+        .actions{
+          padding-left: 1.5rem;
         }
       }
     }
