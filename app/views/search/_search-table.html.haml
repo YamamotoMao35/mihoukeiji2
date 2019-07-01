@@ -4,8 +4,8 @@
       %table.table
         %thead
           %tr.table-success
-            %th{style: "width: 80px"} 全レス
+            %th{style: "width: 100px"} スレッドID
             %th{scope: "col"} タイトル
         %tbody
           %table.table.table-striped.table-hover
-            = render partial: 'boards/pickup', collection: @board, as: :board
+            = render partial: 'boards/description', collection: @board, as: :board
