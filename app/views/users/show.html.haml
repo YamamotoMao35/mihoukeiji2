@@ -1,10 +1,27 @@
 .mypage
   .mypage-wrapper
-    .container
+    .container.col-sm-12.col-md-12
       = render 'boards/header'
       - breadcrumb :user
       = render 'layouts/breadcrumbs'
-      %h5.btn.btn-outline-primary.mt-2
-        = link_to "ユーザー編集", edit_user_path
-      %h5.btn.btn-outline-primary.mt-2
-        = link_to "退会", withdrawal_user_path
+      .user-table.col-sm-7.col-md-7.pull-left.mr-4
+        .mypage-title.mb-2
+          %h5 マイページ
+        .table_created.d-flex
+          %h3=@name
+          %span さんが作成したスレッド一覧
+        %section
+          .board-text.col-sm-10.col-md-10
+            %table.table
+              %thead
+                %tr.table-success
+                  %th{style: "width: 100px"} スレッドID
+                  %th{scope: "col"} タイトル
+              %tbody
+                %table.table.table-striped.table-hover
+                  = render partial: 'boards/description', collection: @boards, as: :board
+          %tbody.text-center
+            = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'
+      .user-info.col-sm-4.col-md-4.pull-right.mx-auto
+        = render partial: 'mypage-sidebar'
+
