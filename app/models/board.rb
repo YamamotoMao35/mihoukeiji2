@@ -3,6 +3,7 @@ class Board < ApplicationRecord
   validates :description, presence: true, length: {maximum: 1000}
   validates :categories, presence: true
 
+  belongs_to :user
   has_many :messages
   has_many :board_classifications
   has_many :categories, through: :board_classifications
