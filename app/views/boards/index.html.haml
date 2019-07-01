@@ -1,10 +1,10 @@
 .board-wrapper.img-fluid
-  .board-index
+  .board-index.row
     .container
       = render "header"
-      .sidebar.col-sm-3.col-md-3
+      .board-sidebar.col-sm-3.col-md-3.pull-right
         = render "sidebar"
-      #index_header_box.col-sm-9.col-md-9
+      #index_header_box.col-sm-8.col-md-8.pull-left
         %ul
           %li
             %h5
@@ -17,7 +17,7 @@
               %button.btn.btn-primary{type: "button", onclick: "location.href='https://mihoutechpeak.hatenablog.com/archive'"} ブログ
               で紹介することがあります
 
-      .board-text.col-sm-9.col-md-9
+      .board-text.col-sm-8.col-md-8.pull-left
         %table.table
           %thead
             %tr.table-success
