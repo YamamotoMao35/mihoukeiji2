@@ -1,0 +1,109 @@
+.user-info{
+  &__title{
+    width: 50%;
+    background-color: $gray-600;
+    height: 30px;
+    border-radius: 5px 0 5px 0;
+    text-align: center;
+    padding: 5px;
+    h5{
+      color: $white;
+      margin: auto 0;
+    }
+  }
+  &__name{
+    .user-name{
+      padding: 6px 0;
+      h4{
+        color: $teal;
+      }
+      span{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    h5{
+      a{
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+  &__id{
+    margin-top: 10px;
+    span{
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: $blue;
+      line-height: 1.2rem;
+    }
+  }
+  &__boards-count{
+    margin-top: 10px;
+    span{
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: $blue;
+      line-height: 1.2rem;
+    }
+  }
+  &__profile{
+    &--text{
+      padding: 10px 12px;
+      min-height: 50px;
+      font-size: 16px;
+    }
+    &--icon{
+      padding: 10px;
+      line-height: 20px;
+      .blog-icon{
+        margin-bottom: 10px;
+        .fas.fa-link{
+          font-size: 20px;
+        }
+        span{
+          margin-left: 6px;
+        }
+      }
+      .prefecture-icon{
+        margin-bottom: 10px;
+        .fas.fa-map-marker-alt{
+          font-size: 20px;
+        }
+        span{
+          margin-left: 6px;
+        }
+      }
+      .profile-link-icon{
+        .fas.fa-cog{
+          font-size: 20px;
+        }
+        a {
+          color: $blue;
+          margin-left: 6px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .thread-create{
+    .btn.btn-outline-primary{
+      width: 70%;
+      text-align: center;
+      a{
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
+  &__withdrawal{
+    .btn.btn-outline-warning{
+      width: 70%;
+      text-align: center;
+      a{
+        color: red;
+      }
+    }
+  }
+}
