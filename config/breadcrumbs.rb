@@ -36,7 +36,7 @@ crumb :user_edit do
 end
 
 crumb :withdrawal do
-  link '退会'
+  link 'アカウント削除'
   parent :user
 end
 

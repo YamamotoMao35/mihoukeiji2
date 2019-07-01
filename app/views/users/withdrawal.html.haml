@@ -3,9 +3,25 @@
     #contact-form.container
       - breadcrumb :withdrawal
       = render 'layouts/breadcrumbs'
-      .withdrawal-title
-        %h5 退会手続き
       .withdrawal-inner
         = form_with(url: "/users/#{@user.id}", method: :delete, local: true) do |f|
-          .actions.d-flex
-            = f.submit "退会", class: 'btn btn-secondary btn-lg'
+          .withdrawal-inner__title
+            %h5 アカウント削除
+          .withdrawal-inner__notice.pl-4
+            %p ユーザー情報を破棄するとそのアカウントでの掲示板作成ができなくなります。
+            %p 十分ご注意ください
+          .withdrawal-inner__form.col-sm-10.col-md-10
+            = f.label "(※必須項目)", class: "control-label"
+            .form-group
+              %table.form-table{cellspacing: 0}
+                %tbody
+                  %tr.table-active
+                    %th{scope: "row", class: "left-content"} ユーザー情報の破棄
+                    %td
+                      %label
+                        %input.required{name: "instrument", type: "checkbox"}/
+                        ユーザー情報を破棄する
+            .actions.d-flex
+              = f.submit "削除する", class: 'btn btn-withdrawal btn-lg', id: "submit-form"
+            .return-mypage
+              = link_to "[削除しない]", user_path(current_user)
