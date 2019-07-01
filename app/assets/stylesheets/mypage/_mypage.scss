@@ -1,6 +1,6 @@
 .mypage{
   min-height: 100vh;
-  background: $gray-300 fixed;
+  background: url("moon_surface.jpg") fixed;
   background-size: cover;
   .container{
     @include box-size;
@@ -9,7 +9,7 @@
       padding: 0 10px 10px 0;
       border: 2px solid $secondary;
       border-radius: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       .mypage-title{
         width: 30%;
         background-color: $gray-600;
@@ -34,6 +34,9 @@
       }
       .board-text{
         padding: 0px 10px;
+        .table.table-striped{
+          border: 1px solid #eceeef;
+        }
       }
     }
     .user-info{
@@ -42,7 +45,6 @@
       border-radius: 5px;
       background: $white;
       margin-bottom: 30px;
-      
     }
   }
 }
