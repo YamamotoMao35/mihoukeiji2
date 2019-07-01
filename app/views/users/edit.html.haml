@@ -3,15 +3,16 @@
     #contact-form.container
       - breadcrumb :user_edit
       = render 'layouts/breadcrumbs'
-      .edit-title
-        %h5 アカウントの編集
+      %h5.mt-4.col-sm-5.col-md-5 アカウントの編集
       .edit-page-inner
         = form_with model: @user, local: true do |f|
           .form-group
-            = f.label :name
+            = f.label "名前"
+            %span.form-require 必須
             = f.text_field :name, autofocus: true, placeholder: "例)みほ太郎", class: "form-control required"
           .form-group
-            = f.label :email
+            = f.label "メールアドレス"
+            %span.form-require 必須
             = f.email_field :email,placeholder: "PC・携帯どちらでも可", class: "form-control required"
           .actions.d-flex
             = f.submit "情報更新", id: "submit-form",class: 'btn btn-secondary btn-lg'
