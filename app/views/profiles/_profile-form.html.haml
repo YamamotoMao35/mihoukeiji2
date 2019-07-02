@@ -1,23 +1,26 @@
 .profile-form
-  .form-group
-    = profile.label "サイト/ブログ"
-    = profile.text_field :site, autofocus: true, class: "form-control"
-  .form-group
-    = profile.label "所属している会社/組織"
-    = profile.text_field :organization, class: "form-control"
-  .form-group
-    = profile.label "居住地"
-    .select-wrap
-      = profile.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class: "form-control"
-      %i.fas.fa-angle-down
-  .form-group
-    = profile.label "自己紹介"
-    = profile.text_area :self_introduction, id: "self_introduction", class: "form-control"
+  .profile-form__title
+    %h3 #{current_user.name}/プロフィール編集
+  .profile-form__input.mx-5
+    .form-group
+      = profile.label "サイト/ブログ"
+      = profile.text_field :site, autofocus: true, class: "form-control", placeholder: "個人サイト名を入力してください(任意)"
+    .form-group
+      = profile.label "所属している会社/組織"
+      = profile.text_field :organization, class: "form-control", placeholder: "会社/組織名を入力してください(任意)"
+    .form-group
+      = profile.label "居住地"
+      .select-wrap
+        = profile.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class: "form-control"
+        %i.fas.fa-angle-down
+    .form-group
+      = profile.label "自己紹介"
+      = profile.text_area :self_introduction, id: "self_introduction", class: "form-control", cols: "30", rows: "5", placeholder: "自己紹介を入力してください(任意)"
     .words-length
       .words-length__count.d-flex
         %h5 現在の文字数：
         .count
         %span 文字
-      .words-length__notice (※120文字以内)
-  .actions.d-flex
-    = profile.submit "更新する", id: "profile-submit", class: 'btn btn-secondary btn-lg'
+      .words-length__notice (※150文字以内)
+    .actions.d-flex
+      = profile.submit "更新する", id: "profile-submit", class: 'btn btn-secondary btn-lg'
