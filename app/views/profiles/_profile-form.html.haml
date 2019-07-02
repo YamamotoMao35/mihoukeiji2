@@ -12,7 +12,12 @@
       %i.fas.fa-angle-down
   .form-group
     = profile.label "自己紹介"
-    = profile.text_area :self_introduction, class: "form-control"
-    %span 120文字以内
+    = profile.text_area :self_introduction, id: "self_introduction", class: "form-control"
+    .words-length
+      .words-length__count.d-flex
+        %h5 現在の文字数：
+        .count
+        %span 文字
+      .words-length__notice (※120文字以内)
   .actions.d-flex
-    = profile.submit "更新する", class: 'btn btn-secondary btn-lg'
+    = profile.submit "更新する", id: "profile-submit", class: 'btn btn-secondary btn-lg'

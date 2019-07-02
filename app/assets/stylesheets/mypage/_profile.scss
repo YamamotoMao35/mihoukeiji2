@@ -13,4 +13,17 @@
       transform: translate(0, -50%);
     }
   }
+  .form-group{
+    .words-length{
+      &__count{
+        float: left;
+      }
+      &__notice{
+        float: right;
+      }
+    }
+  }
+  .actions{
+    clear: both;
+  }
 }
