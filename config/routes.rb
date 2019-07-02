@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get "attention/assistance"
   get "attention/privacy_policy"
   resources :boards, only: [:index, :new, :create, :show, :update] do
+    collection do
+      get :category_search
+    end
     resources :messages, only: [:create]
   end
 

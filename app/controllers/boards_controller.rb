@@ -28,6 +28,15 @@ class BoardsController < ApplicationController
     @board.update(board_params)
   end
 
+  def category_search
+    @categories = Category.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+    render json: @categories
+  end
+
   private
   def board_params
     params.require(:board).permit(:title, :description, category_ids: []).merge(user_id: current_user.id)
