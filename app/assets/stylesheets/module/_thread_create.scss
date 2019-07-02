@@ -7,7 +7,7 @@
       border-radius: 20px;
       padding: 20px 40px;
       background-color: $primary;
-      .board-create-inner{
+      .board-create-form{
         background: $white;
         border-radius: 20px;
         padding-bottom: 20px;
@@ -24,8 +24,7 @@
             margin: auto 0;
           }
         }
-        &__description{
-          padding-left: 1.5rem;
+        .board-description{
           margin-bottom: 15px;
           label{
             color: $black;
@@ -42,11 +41,13 @@
           padding: 10px 16px;
         }
         .form-group{
-          padding-left: 1.5rem;
           width: 60%;
-          position: relative;
-          .fas.fa-angle-down{
-            @include arrow-down;
+          .select-wrap {
+            position: relative;
+            margin: 8px 0 0;
+            .fa-angle-down {
+              @include arrow-down;
+            }
           }
           #thread-description{
             overflow: scroll;
@@ -55,8 +56,10 @@
             height: 40px;
           }
         }
-        .actions{
-          padding-left: 1.5rem;
+        #category-search-result{
+          .no-category{
+            font-size: 16px;
+          }
         }
       }
     }
