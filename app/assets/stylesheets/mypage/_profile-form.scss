@@ -1,0 +1,65 @@
+.profile-form{
+  &__title{
+    width: 80%;
+    background-color: $gray-600;
+    height: 60px;
+    border-radius: 10px 0 10px 0;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    h3{
+      color: $white;
+      margin: auto 0;
+    }
+  }
+  &__input{
+    .form-group{
+      label{
+        font-size: 20px;
+        color: $black;
+      }
+      input{
+        height: 50px;
+      }
+      select{
+        height: 50px;
+      }
+    }
+    .select-wrap {
+      position: relative;
+      margin: 8px 0 0;
+      .fa-angle-down {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+    }
+    .words-length{
+      &__count{
+        float: left;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        margin: 5px 0 15px;
+        .count{
+          font-size: 1.25rem;
+        }
+        span{
+          vertical-align: middle;
+          font-size: 1.25rem;
+        }
+      }
+      &__notice{
+        float: right;
+        font-size: 1.25rem;
+      }
+    }
+    .actions{
+      clear: both;
+    }
+  }
+}
