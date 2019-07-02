@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:site, :organization, :self_introduction).merge(user_id: current_user.id)
+    params.require(:profile).permit(:site, :organization, :prefecture_id, :self_introduction).merge(user_id: current_user.id)
   end
 
   def set_user
