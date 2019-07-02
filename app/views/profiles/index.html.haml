@@ -1,0 +1,12 @@
+.profile-page
+  .profile-container.col-sm-10.col-md-10
+    .container
+      - breadcrumb :profile
+      = render 'layouts/breadcrumbs'
+      .profile-inner
+        - if @user.present?
+          = form_with(model: @profile, url: "/users/#{current_user.id}/profiles/#{current_user.profile.id}", method: :patch, local: true) do |profile|
+            = render partial: "profile-form", locals: { profile: profile }
+        - else
+          = form_with(model: @profile, url: "/users/#{current_user.id}/profiles", method: :post, local: true) do |profile|
+            = render partial: "profile-form", locals: { profile: profile }

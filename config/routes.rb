@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] do
     get :withdrawal, on: :member
+    resources :profiles, only: [:index, :create, :update]
   end
 end

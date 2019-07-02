@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :boards
+  has_one :profile
   acts_as_paranoid
 end

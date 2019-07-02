@@ -40,6 +40,11 @@ crumb :withdrawal do
   parent :user
 end
 
+crumb :profile do
+  link 'プロフィール'
+  parent :user
+end
+
 crumb :board do |board|
   link "#{board.title}"
 end
