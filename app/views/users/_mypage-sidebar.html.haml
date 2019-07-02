@@ -20,7 +20,7 @@
       .user-info__profile--icon.border-top.border-bottom
         .blog-icon
           %i.fas.fa-link
-          %span= @profile.site
+          %span= link_to "#{@profile.site}", "#{@profile.site}"
         .organization-icon
           %i.far.fa-building
           %span= @profile.organization
