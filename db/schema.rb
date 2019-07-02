@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_30_111656) do
+ActiveRecord::Schema.define(version: 2019_07_01_104320) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 2019_06_30_111656) do
     t.index ["board_id"], name: "index_messages_on_board_id"
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "site"
+    t.text "organization"
+    t.integer "prefecture_id"
+    t.text "self_introduction"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -90,4 +101,5 @@ ActiveRecord::Schema.define(version: 2019_06_30_111656) do
   add_foreign_key "board_classifications", "categories"
   add_foreign_key "boards", "users"
   add_foreign_key "messages", "boards"
+  add_foreign_key "profiles", "users"
 end
