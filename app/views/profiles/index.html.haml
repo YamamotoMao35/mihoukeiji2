@@ -4,7 +4,7 @@
       - breadcrumb :profile
       = render 'layouts/breadcrumbs'
       .profile-inner
-        - if @profile.present?
+        - if @user.present?
           = form_with(model: @profile, url: "/users/#{current_user.id}/profiles/#{current_user.profile.id}", method: :patch, local: true) do |profile|
             = render partial: "profile-form", locals: { profile: profile }
         - else
