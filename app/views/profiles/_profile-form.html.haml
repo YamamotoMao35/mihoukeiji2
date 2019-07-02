@@ -6,6 +6,11 @@
     = profile.label "所属している会社/組織"
     = profile.text_field :organization, class: "form-control"
   .form-group
+    = profile.label "居住地"
+    .select-wrap
+      = profile.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class: "form-control"
+      %i.fas.fa-angle-down
+  .form-group
     = profile.label "自己紹介"
     = profile.text_area :self_introduction, class: "form-control"
   .actions.d-flex

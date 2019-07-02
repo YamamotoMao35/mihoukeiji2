@@ -1,0 +1,16 @@
+.profile-form{
+  .select-wrap {
+    position: relative;
+    margin: 8px 0 0;
+    .fa-angle-down {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 20px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+  }
+}
