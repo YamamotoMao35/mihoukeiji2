@@ -1,0 +1,12 @@
+.profile-form
+  .form-group
+    = profile.label "サイト/ブログ"
+    = profile.text_field :site, autofocus: true, class: "form-control"
+  .form-group
+    = profile.label "所属している会社/組織"
+    = profile.text_field :organization, class: "form-control"
+  .form-group
+    = profile.label "自己紹介"
+    = profile.text_area :self_introduction, class: "form-control"
+  .actions.d-flex
+    = profile.submit "更新する", class: 'btn btn-secondary btn-lg'
