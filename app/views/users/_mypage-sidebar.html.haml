@@ -14,18 +14,22 @@
     %h5 スレッド作成回数：
     %span= @boards.length
   .user-info__profile
-    .user-info__profile--text.border-top.border-bottom
-      %p あああああ
-    .user-info__profile--icon.border-top.border-bottom
-      .blog-icon
-        %i.fas.fa-link
-        %span みほうサイト
-      .prefecture-icon
-        %i.fas.fa-map-marker-alt
-        %span 兵庫県
-      .profile-link-icon
-        %i.fas.fa-cog
-        = link_to "プロフィールを編集する", user_profiles_path(current_user)
+    - if @profile.present?
+      .user-info__profile--text.border-top.border-bottom
+        %p= @profile.self_introduction
+      .user-info__profile--icon.border-top.border-bottom
+        .blog-icon
+          %i.fas.fa-link
+          %span= @profile.site
+        .organization-icon
+          %i.far.fa-building
+          %span= @profile.organization
+        .prefecture-icon
+          %i.fas.fa-map-marker-alt
+          %span= @profile.prefecture.name
+    .profile-link-icon
+      %i.fas.fa-cog
+      = link_to "プロフィールを編集する", user_profiles_path(current_user)
   .thread-create.ml-2
     %h5.btn.btn-outline-primary.mt-2
       = link_to "新規スレッド作成", new_board_path

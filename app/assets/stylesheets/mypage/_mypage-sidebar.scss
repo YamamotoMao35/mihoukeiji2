@@ -49,6 +49,17 @@
     }
   }
   &__profile{
+    .profile-link-icon{
+      padding: 10px;
+      .fas.fa-cog{
+        font-size: 20px;
+      }
+      a {
+        color: $blue;
+        margin-left: 6px;
+        text-decoration: none;
+      }
+    }
     &--text{
       padding: 10px 12px;
       min-height: 50px;
@@ -66,6 +77,15 @@
           margin-left: 6px;
         }
       }
+      .organization-icon{
+        margin-bottom: 10px;
+        .far.fa-building{
+          font-size: 20px;
+        }
+        span{
+          margin-left: 6px;
+        }
+      }
       .prefecture-icon{
         margin-bottom: 10px;
         .fas.fa-map-marker-alt{
@@ -73,16 +93,6 @@
         }
         span{
           margin-left: 6px;
-        }
-      }
-      .profile-link-icon{
-        .fas.fa-cog{
-          font-size: 20px;
-        }
-        a {
-          color: $blue;
-          margin-left: 6px;
-          text-decoration: none;
         }
       }
     }
