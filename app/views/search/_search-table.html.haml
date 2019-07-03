@@ -1,6 +1,6 @@
-.wrapper.clearfix
+.wrapper.clearfix.col-sm-8.col-md-8.pull-left
   %section
-    .board-text.col-sm-9.col-md-9
+    .board-text
       %table.table
         %thead
           %tr.table-success
@@ -9,3 +9,5 @@
         %tbody
           %table.table.table-striped.table-hover
             = render partial: 'boards/description', collection: @board, as: :board
+      %tbody.text-center
+        = will_paginate @board,previous_label: ' < 前へ', next_label: '次へ >'
