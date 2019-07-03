@@ -13,20 +13,20 @@
             %h5 スレッド作成
           .board-create-form__inner.mx-5
             .board-description.d-flex
-              = f.label "スレッドタイトル"
+              %p スレッドタイトル
               %span.form-require 必須
             .form-group
               = f.text_field :title, placeholder: "スレの名前を入力してください(60文字以内)", class: "form-control required"
             .board-description.d-flex
-              = f.label "スレッド説明文"
+              %p スレッド説明文
               %span.form-require 必須
             .form-group
               = f.text_area :description, placeholder: "スレの説明を入力してください(1000文字以内)",style: {cols: 50, rows: 20}, class: "form-control required", id: "thread-description"
             .board-description.d-flex
-              = f.label "スレッドカテゴリ名"
+              %p スレッドカテゴリ名
               %span.form-require 必須
             .form-group
-              = f.text_area :category_id, class: "form-control required", id: "category-form", name: 'board[category_ids][]'
+              = f.text_field :category_ids, value: "", class: "form-control required", id: "category-form", name: 'board[category_ids][]'
             %div#category-search-result
             .actions.d-flex
-              = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg", id: "submit-form"
+              = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg thread-new-btn", id: "submit-form"
