@@ -5,14 +5,14 @@ $(function(){
   function buildCategory(){
     var html = `<div class="form-group">
                   <div class="select-wrap">
-                    <select class="form-control required" id="category-select" name="board[category_ids][]"><option value="">---</option>
-                    </select>
+                    <ul class="form-category-list hover" id="category-select">
+                    </ul>
                   </div>
                 </div>`
     return html;
   }
   function buildCategotyOption(category){
-    var categoryOption = `<option value="${category.id}">${category.name}</option>`
+    var categoryOption = `<li data-category-id="${category.id}" data-category-name="${category.name}">${category.name}</li>`
     return categoryOption;
   }
 
@@ -39,16 +39,15 @@ $(function(){
       search_result.empty();
       var InsertHTML = '';
       if (categories.length !== 0){
+        search_result.removeClass('border-bottom mb-4');
         if (input !== ""){
           search_result.append(buildCategory());
           categories.forEach(function(category){
             InsertHTML = buildCategotyOption(category);
             $("#category-select").append(InsertHTML);
           });
-          search_result.addClass('border-bottom mb-4');
         }
         else{
-          search_result.removeClass('border-bottom mb-4');
           search_result.remove(buildCategory());
         }
       }
@@ -59,6 +58,15 @@ $(function(){
     })
     .fail(function(){
       alert('カテゴリー検索に失敗しました');
+    })
+  })
+  $(document).on("click", "#category-select li", function(){
+    search_result.empty();
+    var category_id = $(this).attr("data-category-id");
+    var category_name = $(this).attr("data-category-name");
+    textField.val(`${category_name}`);
+    $(document).on("click", ".thread-new-btn", function(){
+      textField.val(`${category_id}`);
     })
   })
 })
