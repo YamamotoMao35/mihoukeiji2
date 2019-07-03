@@ -12,7 +12,7 @@
       = link_to "ユーザー編集", edit_user_path
   .user-info__boards-count.d-flex.ml-2
     %h5 スレッド作成回数：
-    %span= @boards.length
+    %span= current_user.boards.length
   .user-info__profile
     - if @profile.present?
       .user-info__profile--text.border-top.border-bottom
