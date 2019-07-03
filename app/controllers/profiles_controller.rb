@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to user_path(current_user), notice: "プロフィールを編集しました"
     else
-      render :index
+      render :index, alert: "プロフィールの更新に失敗しました。"
     end
   end
 
@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to user_path(current_user), notice: "プロフィールを編集しました"
     else
-      render :index
+      render :index, alert: "プロフィールの更新に失敗しました。"
     end
   end
 

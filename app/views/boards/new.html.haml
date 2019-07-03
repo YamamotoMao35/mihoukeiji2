@@ -3,29 +3,30 @@
     #contact-form.container
       - breadcrumb :create_board
       = render "layouts/breadcrumbs"
-      .board-create-inner
+      .board-create-form
         = form_with model: @board, local: true do |f|
           - if @board.errors.any?
             - @board.errors.full_messages.each do |err|
               %font{color: "red"}= err
               %br/
-          .board-create-inner__title
+          .board-create-form__title
             %h5 スレッド作成
-          .board-create-inner__description.d-flex
-            = f.label "スレッドタイトル"
-            %span.form-require 必須
-          .form-group
-            = f.text_field :title, placeholder: "スレの名前を入力してください(60文字以内)", class: "form-control required"
-          .board-create-inner__description.d-flex
-            = f.label "スレッド説明文"
-            %span.form-require 必須
-          .form-group
-            = f.text_area :description, placeholder: "スレの説明を入力してください(1000文字以内)",style: {cols: 50, rows: 20}, class: "form-control required", id: "thread-description"
-          .board-create-inner__description.d-flex
-            = f.label "スレッドカテゴリ名"
-            %span.form-require 必須
-          .form-group
-            = f.collection_select :category_ids, Category.all, :id, :name,{prompt: "---"}, class: "form-control required", id: "category-form", name: 'board[category_ids][]'
-            %i.fas.fa-angle-down
-          .actions.d-flex
-            = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg", id: "submit-form"
+          .board-create-form__inner.mx-5
+            .board-description.d-flex
+              %p スレッドタイトル
+              %span.form-require 必須
+            .form-group
+              = f.text_field :title, placeholder: "スレの名前を入力してください(60文字以内)", class: "form-control required"
+            .board-description.d-flex
+              %p スレッド説明文
+              %span.form-require 必須
+            .form-group
+              = f.text_area :description, placeholder: "スレの説明を入力してください(1000文字以内)",style: {cols: 50, rows: 20}, class: "form-control required", id: "thread-description"
+            .board-description.d-flex
+              %p スレッドカテゴリ名
+              %span.form-require 必須
+            .form-group
+              = f.text_field :category_ids, value: "", class: "form-control required", id: "category-form", name: 'board[category_ids][]', autocomplete: "off"
+            %div#category-search-result
+            .actions.d-flex
+              = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg thread-new-btn", id: "submit-form"

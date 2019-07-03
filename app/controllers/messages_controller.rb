@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     if message.save
       redirect_to "/boards/#{message.board_id}", notice: "レスを投稿しました"
     else
-      redirect_to "/boards/#{message.board_id}"
+      redirect_to "/boards/#{message.board_id}", alert: "レスを投稿できませんでした。"
     end
   end
 

@@ -7,7 +7,7 @@
       border-radius: 20px;
       padding: 20px 40px;
       background-color: $primary;
-      .board-create-inner{
+      .board-create-form{
         background: $white;
         border-radius: 20px;
         padding-bottom: 20px;
@@ -24,10 +24,9 @@
             margin: auto 0;
           }
         }
-        &__description{
-          padding-left: 1.5rem;
+        .board-description{
           margin-bottom: 15px;
-          label{
+          p{
             color: $black;
             font-size: 18px;
             margin-bottom: 0;
@@ -42,11 +41,16 @@
           padding: 10px 16px;
         }
         .form-group{
-          padding-left: 1.5rem;
           width: 60%;
-          position: relative;
-          .fas.fa-angle-down{
-            @include arrow-down;
+          input{
+            touch-action: manipulation;
+          }
+          .select-wrap {
+            position: relative;
+            margin: 8px 0 0;
+            .fa-angle-down {
+              @include arrow-down;
+            }
           }
           #thread-description{
             overflow: scroll;
@@ -55,8 +59,35 @@
             height: 40px;
           }
         }
-        .actions{
-          padding-left: 1.5rem;
+        #category-search-result{
+          .no-category{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    ul{
+      list-style: none;
+    }
+    .form-category-list{
+      padding-left: 0;
+      overflow: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      max-height: 280px;
+      background: #fff;
+      -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+      -webkit-overflow-scrolling: touch;
+      li{
+        padding: 16px 8px;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover{
+          background: #ff0000;
+          color: $white;
         }
       }
     }
