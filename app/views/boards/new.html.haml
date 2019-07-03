@@ -26,7 +26,7 @@
               %p スレッドカテゴリ名
               %span.form-require 必須
             .form-group
-              = f.text_field :category_ids, value: "", class: "form-control required", id: "category-form", name: 'board[category_ids][]'
+              = f.text_field :category_ids, value: "", class: "form-control required", id: "category-form", name: 'board[category_ids][]', autocomplete: "off"
             %div#category-search-result
             .actions.d-flex
               = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg thread-new-btn", id: "submit-form"
