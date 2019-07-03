@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to root_path, notice: "スレッドが作成されました"
     else
-      redirect_to new_board_path
+      redirect_to new_board_path, alert: "保存ができませんでした。再入力をお願いします。"
     end
   end
 

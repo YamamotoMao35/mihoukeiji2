@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user), notice: "ユーザー情報を編集しました"
     else
-      render :edit
+      render :edit, alert: "ユーザー情報の更新に失敗しました。"
     end
   end
 
