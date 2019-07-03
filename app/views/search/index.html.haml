@@ -1,23 +1,22 @@
 .board-wrapper.img-fluid
-  .board-index
+  .board-index.row
     .container
       = render 'boards/header'
       - breadcrumb :search, @search_title
       = render 'layouts/breadcrumbs'
-      .sidebar.col-sm-3.col-md-3
+      .board-sidebar.col-sm-3.col-md-3.pull-right.mx-auto
         = render "boards/sidebar"
-      .search-contents
+      .search-contents.pull-left
       - if @search_title.present?
         - if (@board.length != 0)
-          .search-word.col-sm-9.col-md-9
-            %h3 #{@search_title}の検索結果
+          .search-word.col-sm-6.col-md-6
+            %p #{@search_title}の検索結果
           = render "search-table"
         - else
-          .search-word.col-sm-9.col-md-9
-            %h3 スレッドがありません。
+          .search-word.col-sm-8.col-md-8
+            %p スレッドがありません。
       - else
-        .search-word.col-sm-9.col-md-9
-          %h3 新着スレッド
+        .search-word.col-sm-8.col-md-8
+          %p 新着スレッド
         = render "search-table"
-      %tbody.text-center
-        = will_paginate @board,previous_label: ' < 前へ', next_label: '次へ >'
+
