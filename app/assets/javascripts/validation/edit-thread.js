@@ -14,5 +14,11 @@ $(function(){
         console.log("OK");
       }
     })
+    $(".btn-destroy").click(function(){
+      var result = window.confirm("削除してよろしいでしょうか?");
+      if(result != true){
+        return false;
+      }
+    })
   }
 })
