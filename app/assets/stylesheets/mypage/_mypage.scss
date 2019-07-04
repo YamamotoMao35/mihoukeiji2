@@ -1,6 +1,6 @@
 .mypage{
   min-height: 100vh;
-  background: url("moon_surface.jpg") fixed;
+  background: image-url("moon_surface.jpg") fixed;
   background-size: cover;
   .container{
     @include box-size;
