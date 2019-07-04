@@ -1,4 +1,4 @@
-.board-create{
+.board-management-page{
   background: $gray-300 fixed;
   background-size: cover;
   @include page-body;
@@ -7,7 +7,7 @@
       border-radius: 20px;
       padding: 20px 40px;
       background-color: $primary;
-      .board-create-form{
+      .board-management-form{
         background: $white;
         border-radius: 20px;
         padding-bottom: 20px;
@@ -89,6 +89,21 @@
           background: #ff0000;
           color: $white;
         }
+      }
+    }
+    .thread-destroy{
+      padding: 0 auto;
+      p {
+        font-size: 18px;
+        color: $orange;
+      }
+      .btn.btn-destroy{
+        width: 40%;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+        background-color: #e72510;
+        border-color: #e72510;
       }
     }
   }

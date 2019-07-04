@@ -45,8 +45,15 @@ crumb :profile do
   parent :user
 end
 
+# showアクション用
 crumb :board do |board|
-  link "#{board.title}"
+  link board.title, board_path(board)
+  parent :root
+end
+
+crumb :board_edit do |board|
+  link "スレッド編集"
+  parent :board, board
 end
 
 crumb :search do |search_title|

@@ -4,7 +4,7 @@ class Board < ApplicationRecord
   validates :categories, presence: true
 
   belongs_to :user
-  has_many :messages
-  has_many :board_classifications
+  has_many :messages, dependent: :destroy
+  has_many :board_classifications, dependent: :destroy
   has_many :categories, through: :board_classifications
 end
