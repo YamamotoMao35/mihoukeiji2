@@ -7,7 +7,7 @@
       .edit-page-inner
         = form_with model: @user, local: true do |f|
           .form-group
-            = f.label "名前"
+            = f.label "名前(10文字以内)"
             %span.form-require 必須
             = f.text_field :name, autofocus: true, placeholder: "例)みほ太郎", class: "form-control required"
           .form-group
@@ -15,4 +15,4 @@
             %span.form-require 必須
             = f.email_field :email,placeholder: "PC・携帯どちらでも可", class: "form-control required"
           .actions.d-flex
-            = f.submit "情報更新", id: "submit-form",class: 'btn btn-secondary btn-lg'
+            = f.submit "情報更新", id: "submit-form",class: 'btn btn-secondary btn-lg user-edit-btn'

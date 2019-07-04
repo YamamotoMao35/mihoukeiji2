@@ -4,6 +4,9 @@
     &__head{
       .bread-crumbs{
         background: #F8E0E0;
+        a {
+          color: #4169e1;
+        }
         li.breadcrumb{
           background: #F8E0E0;;
         }
@@ -11,19 +14,27 @@
     }
     .help-contents{
       background: #f7f7f7;
-      padding: 10px 20px;;
+      padding: 10px 20px;
+      margin-bottom: 40px;
       &__title{
         background: $primary;
         padding: 10px 16px;
       }
       &__head{
-        margin-top: 10px;
+        margin: 30px 0;
         p{
-          font-size: 20px;
+          font-size: 40px;
           font-weight: 300;
+          color: #4169e1;
+        }
+        li {
+          a{
+            font-weight: bold;
+            color: #333;
+          }
         }
       }
-      &__contents{
+      &__inner{
         h2{
           border-bottom: 1px solid #666666;
           border-left: 5px solid #666666;

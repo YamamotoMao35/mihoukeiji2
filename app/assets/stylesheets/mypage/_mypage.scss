@@ -1,6 +1,6 @@
 .mypage{
   min-height: 100vh;
-  background: url("moon_surface.jpg") fixed;
+  background: image-url("moon_surface.jpg") fixed;
   background-size: cover;
   .container{
     @include box-size;
@@ -37,13 +37,6 @@
           border: 1px solid #eceeef;
         }
       }
-    }
-    .user-info{
-      padding: 0 10px 10px 0;
-      border: 2px solid $secondary;
-      border-radius: 5px;
-      background: $white;
-      margin-bottom: 30px;
     }
   }
 }

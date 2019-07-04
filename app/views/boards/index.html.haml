@@ -4,7 +4,7 @@
       = render "header"
       .board-sidebar.col-sm-3.col-md-3.pull-right
         = render "sidebar"
-      #index_header_box.col-sm-8.col-md-8.pull-left
+      #index_header_box.col-sm-7.col-md-7.pull-left
         %ul
           %li
             %h5
@@ -24,7 +24,7 @@
               %th{style: "width: 100px"} スレッドID
               %th{scope: "col"} タイトル
           %tbody
-            %table.table.table-striped.table-hover
+            %table.table.table-striped.table-hover.mb-4
               = render partial: "description", collection: @boards, as: "board"
         %tbody.text-center
-          = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'
+          = paginate @boards

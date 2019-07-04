@@ -7,7 +7,7 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
         .form-group
-          = f.label "名前"
+          = f.label "名前(10文字以内)"
           %span.form-require 必須
           %br/
           = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例)みほ太郎", class: "form-control required"

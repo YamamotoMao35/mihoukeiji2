@@ -13,17 +13,21 @@
         .board_title
           %h1
             = @board.title
-        %h4 <レス一覧＞
+        %h4 <レス一覧(最新100件)＞
+        .comment-count.d-flex
+          %p= @messages.length
+          %span コメント
         .message-box
           = render partial: "layouts/message", collection: @messages, as: "message"
+          = paginate @messages
       .jumbotron.bg-light.respond_create.col-sm-9.col-md-9
         = form_with(url:"/boards/#{@board.id}/messages",method: :post,local: true) do |f|
           #contact-form.form-group
             = f.label "レスを投稿する"
             - if user_signed_in?
-              = f.text_field :name, placeholder: "名前(省略可)", class: "respond_name readonly-form", value: "#{current_user.name}", readonly: "readonly"
+              = f.text_field :name, placeholder: "名前(10文字以内 省略可)", class: "respond_name readonly-form", value: "#{current_user.name}", readonly: "readonly"
             - else
-              = f.text_field :name, placeholder: "名前(省略可)", class: "respond_name"
+              = f.text_field :name, placeholder: "名前(10文字以内 省略可)", class: "respond_name"
             - if user_signed_in?
               = f.email_field :email, placeholder: "メールアドレス(省略可)", class: "respond_name", value: "#{current_user.email}"
             - else

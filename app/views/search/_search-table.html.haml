@@ -7,7 +7,7 @@
             %th{style: "width: 100px"} スレッドID
             %th{scope: "col"} タイトル
         %tbody
-          %table.table.table-striped.table-hover
+          %table.table.table-striped.table-hover.mb-4
             = render partial: 'boards/description', collection: @board, as: :board
       %tbody.text-center
-        = will_paginate @board,previous_label: ' < 前へ', next_label: '次へ >'
+        = paginate @board

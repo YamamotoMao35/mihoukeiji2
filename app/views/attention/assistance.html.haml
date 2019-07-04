@@ -1,4 +1,4 @@
-.help-page
+#toc.help-page
   .help-wrapper
     .container
       .container__head
@@ -8,3 +8,34 @@
         .help-contents__title
           %h2 掲示板の使い方
         .help-contents__head
+          %p 目次
+          %ul
+            %li.toc-h2.toc-active
+              = link_to "トップページの見方", "#top-page-help"
+            %li.toc-h2
+              = link_to "ユーザー機能の紹介", "#user-help"
+            %li.toc-h3
+              = link_to "新規登録/ログインについて", "#login-help"
+            %li.toc-h3
+              = link_to "ログアウトについて", "#logout-help"
+            %li.toc-h2
+              = link_to "掲示板の機能", "#thread-show-help"
+            %li.toc-h2
+              = link_to "スレッド作成について", "#thread-create-help"
+            %li.toc-h2
+              = link_to "マイページについて", "#mypage-help"
+        .help-contents__inner
+          #top-page-help
+            %h2 トップページの見方
+          #user-help
+            %h2 ユーザー機能の紹介
+          #login-help
+            %h2 新規登録/ログインについて
+          #logout-help
+            %h2 ログアウトについて
+          #thread-show-help
+            %h2 掲示板の機能
+          #thread-create-help
+            %h2 スレッド作成について
+          #mypage-help
+            %h2 マイページについて

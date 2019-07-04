@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @board = Board.where('title LIKE(?)', "%#{params[:search]}%").paginate(page: params[:page], per_page: 10).order('created_at ASC')
+    @board = Board.includes(:user).where('title LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(10).order('created_at ASC')
     @search_title = params[:search]
   end
 end

@@ -1,5 +1,11 @@
-.user-info{
-  &__title{
+.user-info-contents{
+  padding: 0 10px 10px 0;
+  border: 2px solid $secondary;
+  border-radius: 5px;
+  background: $white;
+  margin-bottom: 30px;
+  .contents-title{
+    margin-left: 0;
     width: 50%;
     background-color: $gray-600;
     height: 30px;
@@ -11,108 +17,116 @@
       margin: auto 0;
     }
   }
-  &__name{
-    .user-name{
-      padding: 6px 0;
-      h4{
-        color: $teal;
+  .user-info{
+    &__name{
+      .user-name{
+        padding: 6px 0;
+        h4{
+          color: $teal;
+        }
+        span{
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          font-weight: 500;
+        }
       }
+      h5{
+        a{
+          text-decoration: none;
+          color: $blue;
+        }
+      }
+    }
+    &__id{
+      margin-top: 10px;
       span{
-        font-size: 1.5rem;
-        line-height: 1.5rem;
         font-weight: 500;
-      }
-    }
-    h5{
-      a{
-        text-decoration: none;
+        font-size: 1.25rem;
         color: $blue;
+        line-height: 1.2rem;
       }
     }
-  }
-  &__id{
-    margin-top: 10px;
-    span{
-      font-weight: 500;
-      font-size: 1.25rem;
-      color: $blue;
-      line-height: 1.2rem;
-    }
-  }
-  &__boards-count{
-    margin-top: 10px;
-    span{
-      font-weight: 500;
-      font-size: 1.25rem;
-      color: $blue;
-      line-height: 1.2rem;
-    }
-  }
-  &__profile{
-    .profile-link-icon{
-      padding: 10px;
-      .fas.fa-cog{
-        font-size: 20px;
-      }
-      a {
+    &__boards-count{
+      margin-top: 10px;
+      span{
+        font-weight: 500;
+        font-size: 1.25rem;
         color: $blue;
-        margin-left: 6px;
-        text-decoration: none;
+        line-height: 1.2rem;
       }
     }
-    &--text{
-      padding: 10px 12px;
-      min-height: 50px;
-      font-size: 16px;
-    }
-    &--icon{
-      padding: 10px;
-      line-height: 20px;
-      .blog-icon{
-        margin-bottom: 10px;
-        .fas.fa-link{
+    &__profile{
+      .profile-link-icon{
+        padding: 10px 10px 10px 0;
+        .fas.fa-cog{
           font-size: 20px;
         }
-        span{
+        a {
+          color: $blue;
           margin-left: 6px;
+          text-decoration: none;
         }
       }
-      .organization-icon{
-        margin-bottom: 10px;
-        .far.fa-building{
-          font-size: 20px;
-        }
-        span{
-          margin-left: 6px;
+      &--text{
+        padding: 10px 10px 10px 0;
+        min-height: 50px;
+        font-size: 16px;
+        p{
+          word-wrap: break-word;
         }
       }
-      .prefecture-icon{
-        margin-bottom: 10px;
-        .fas.fa-map-marker-alt{
-          font-size: 20px;
+      &--icon{
+        padding: 10px 10px 10px 0;
+        line-height: 20px;
+        a {
+          word-wrap: break-word;
         }
-        span{
-          margin-left: 6px;
+        .blog-icon{
+          margin-bottom: 10px;
+          .fas.fa-link{
+            font-size: 20px;
+          }
+          span{
+            margin-left: 6px;
+          }
+        }
+        .organization-icon{
+          margin-bottom: 10px;
+          .far.fa-building{
+            font-size: 20px;
+          }
+          span{
+            margin-left: 6px;
+          }
+        }
+        .prefecture-icon{
+          margin-bottom: 10px;
+          .fas.fa-map-marker-alt{
+            font-size: 20px;
+          }
+          span{
+            margin-left: 6px;
+          }
         }
       }
     }
-  }
-  .thread-create{
-    .btn.btn-outline-primary{
-      width: 70%;
-      text-align: center;
-      a{
-        color: $blue;
-        text-decoration: none;
+    .thread-create{
+      .btn.btn-outline-primary{
+        width: 70%;
+        text-align: center;
+        a{
+          color: $blue;
+          text-decoration: none;
+        }
       }
     }
-  }
-  &__withdrawal{
-    .btn.btn-outline-warning{
-      width: 70%;
-      text-align: center;
-      a{
-        color: red;
+    &__withdrawal{
+      .btn.btn-outline-warning{
+        width: 70%;
+        text-align: center;
+        a{
+          color: red;
+        }
       }
     }
   }
