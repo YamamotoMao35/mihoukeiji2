@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :update]
+  before_action :set_board, only: [:show, :edit, :update]
   before_action :move_to_index,except: [:index, :show]
 
   def index
@@ -24,8 +24,19 @@ class BoardsController < ApplicationController
     @messages = @board.messages.limit(1000).page(params[:page]).per(100).order('created_at ASC')
   end
 
+  def edit
+  end
+
   def update
-    @board.update(board_params)
+    if @board.user_id == current_user.id
+      if @board.update(board_params)
+        redirect_to edit_board_path, notice: "スレッド情報を更新しました"
+      else
+        redirect_to edit_board_path, alert: "スレッド情報の更新に失敗しました"
+      end
+    else
+      redirect_to root_path, alert: "スレッド情報の更新に失敗しました。"
+    end
   end
 
   def category_search
