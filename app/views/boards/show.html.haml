@@ -39,6 +39,8 @@
           .bottom-contents
             = link_to "みほう掲示板に戻る", root_path, class: "top-return"
             = link_to "リロード", "/boards/#{@board.id}", class: "btn btn-link"
+            - if @board.user_id == current_user.id
+              = link_to "スレッド編集", edit_board_path, class: "edit-btn ml-3"
 
       %blockquote
         書き込み前に
