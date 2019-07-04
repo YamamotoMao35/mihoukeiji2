@@ -1,6 +1,6 @@
 $(function(){
   var pageUrl = $(location).attr('pathname');
-  if (pageUrl == "/users/1/profiles"){
+  if (pageUrl.match(/\/users\/\d+\/profiles/)){
     var text_max = 150; // 最大入力値
     $(".count").text(text_max - $("#self_introduction").val().length);
 
@@ -37,7 +37,6 @@ $(function(){
     $(".thread-new-btn").click(function(){
       var thread_title = $("input[name='board[title]']").val();
       var thread_description = $("textarea[name='board[description]']").val();
-      console.log(thread_title)
       if (thread_title.length > 60){
         alert("60文字以内で再記入お願いします");
       }
