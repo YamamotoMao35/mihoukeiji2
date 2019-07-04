@@ -38,7 +38,7 @@
             = f.submit "書き込む" ,class: 'text-light btn btn-primary btn-lg respond-btn', id: "submit-form"
           .bottom-contents
             = link_to "みほう掲示板に戻る", root_path, class: "top-return"
-            = button_tag "リロード", class: "btn btn-link",onclick: "window.location.reload()"
+            = link_to "リロード", "/boards/#{@board.id}", class: "btn btn-link"
 
       %blockquote
         書き込み前に
