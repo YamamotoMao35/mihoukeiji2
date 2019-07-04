@@ -28,3 +28,6 @@
             %div#category-search-result
             .actions.d-flex
               = f.submit "スレッド更新", class: "btn btn-secondary btn-lg thread-update-btn", id: "submit-form"
+            .thread-destroy.mt-3
+              %p ※押す前に削除して良いか確認しましょう
+              = link_to "スレッド削除", "/boards/#{@board.id}", method: :delete, class: "btn btn-destroy btn-lg"

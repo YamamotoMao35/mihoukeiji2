@@ -91,5 +91,20 @@
         }
       }
     }
+    .thread-destroy{
+      padding: 0 auto;
+      p {
+        font-size: 18px;
+        color: $orange;
+      }
+      .btn.btn-destroy{
+        width: 40%;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+        background-color: #e72510;
+        border-color: #e72510;
+      }
+    }
   }
 }
