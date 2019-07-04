@@ -66,8 +66,7 @@ gem "pry-rails"
 gem "jquery-rails"
 gem "bootstrap", "~> 4.3.1"
 gem "sprockets", "3.7.2"
-gem "will_paginate"
-gem "will_paginate-bootstrap"
+gem "kaminari"
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'gretel'
