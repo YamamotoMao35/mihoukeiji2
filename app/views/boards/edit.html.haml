@@ -24,7 +24,7 @@
             .form-group
               %input#category-form.form-control.required{value: "#{@board.categories[0].name}", autocomplete: "off"}
             .form-group
-              = f.hidden_field :category_ids, value: "", id: "category-hidden", class: "form-control required", name: 'board[category_ids][]'
+              = f.hidden_field :category_ids, value: "#{@board.categories[0].id}", id: "category-hidden", class: "form-control required", name: 'board[category_ids][]'
             %div#category-search-result
             .actions.d-flex
               = f.submit "スレッド更新", class: "btn btn-secondary btn-lg thread-update-btn", id: "submit-form"
