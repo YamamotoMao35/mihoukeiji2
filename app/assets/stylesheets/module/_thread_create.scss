@@ -1,4 +1,4 @@
-.board-create{
+.board-management-page{
   background: $gray-300 fixed;
   background-size: cover;
   @include page-body;
@@ -7,7 +7,7 @@
       border-radius: 20px;
       padding: 20px 40px;
       background-color: $primary;
-      .board-create-form{
+      .board-management-form{
         background: $white;
         border-radius: 20px;
         padding-bottom: 20px;

@@ -1,12 +1,12 @@
 .board-management-page
   .topic-wrapper.py-4
     #contact-form.container
-      - breadcrumb :create_board
+      - breadcrumb :board_edit, @board
       = render "layouts/breadcrumbs"
       .board-management-form
         = form_with model: @board, local: true do |f|
           .board-management-form__title
-            %h5 スレッド作成
+            %h5 スレッド編集
           .board-management-form__inner.mx-5
             .board-description.d-flex
               %p スレッドタイトル
@@ -22,9 +22,9 @@
               %p スレッドカテゴリ名
               %span.form-require 必須
             .form-group
-              %input#category-form.form-control.required{autocomplete: "off"}
+              %input#category-form.form-control.required{value: "#{@board.categories[0].name}", autocomplete: "off"}
             .form-group
               = f.hidden_field :category_ids, value: "", id: "category-hidden", class: "form-control required", name: 'board[category_ids][]'
             %div#category-search-result
             .actions.d-flex
-              = f.submit "新規スレッド作成", class: "btn btn-secondary btn-lg thread-new-btn", id: "submit-form"
+              = f.submit "スレッド更新", class: "btn btn-secondary btn-lg thread-update-btn", id: "submit-form"
