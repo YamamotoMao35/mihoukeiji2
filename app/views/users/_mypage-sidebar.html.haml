@@ -1,38 +1,39 @@
 .mypage-sidebar
-  .user-info__title
+  .contents-title
     %h5 ユーザー情報
-  .user-info__id.d-flex.ml-2
-    %h5 ユーザーID：
-    %span= current_user.id
-  .user-info__name.d-flex.ml-2
-    .user-name.d-flex
-      %h4=@name
-      %span さん
-    %h5.btn.btn-outline-info
-      = link_to "ユーザー編集", edit_user_path
-  .user-info__boards-count.d-flex.ml-2
-    %h5 スレッド作成回数：
-    %span= current_user.boards.length
-  .user-info__profile
-    - if @profile.present?
-      .user-info__profile--text.border-top.border-bottom
-        %p= @profile.self_introduction
-      .user-info__profile--icon.border-top.border-bottom
-        .blog-icon
-          %i.fas.fa-link
-          %span= link_to "#{@profile.site}", "#{@profile.site}"
-        .organization-icon
-          %i.far.fa-building
-          %span= @profile.organization
-        .prefecture-icon
-          %i.fas.fa-map-marker-alt
-          %span= @profile.prefecture.name
-    .profile-link-icon
-      %i.fas.fa-cog
-      = link_to "プロフィールを編集する", user_profiles_path(current_user)
-  .thread-create.ml-2
-    %h5.btn.btn-outline-primary.mt-2
-      = link_to "新規スレッド作成", new_board_path
-  .user-info__withdrawal.ml-2
-    %h5.btn.btn-outline-warning.mt-2
-      = link_to "アカウント削除", withdrawal_user_path
+  .user-info.ml-2
+    .user-info__id.d-flex
+      %h5 ユーザーID：
+      %span= current_user.id
+    .user-info__name.d-flex
+      .user-name.d-flex.mr-2
+        %h4=@name
+        %span さん
+      %h5.btn.btn-outline-info
+        = link_to "ユーザー編集", edit_user_path
+    .user-info__boards-count.d-flex
+      %h5 スレッド作成回数：
+      %span= current_user.boards.length
+    .user-info__profile
+      - if @profile.present?
+        .user-info__profile--text.border-top.border-bottom
+          %p= @profile.self_introduction
+        .user-info__profile--icon.border-top.border-bottom
+          .blog-icon
+            %i.fas.fa-link
+            %span= link_to "#{@profile.site}", "#{@profile.site}"
+          .organization-icon
+            %i.far.fa-building
+            %span= @profile.organization
+          .prefecture-icon
+            %i.fas.fa-map-marker-alt
+            %span= @profile.prefecture.name
+      .profile-link-icon
+        %i.fas.fa-cog
+        = link_to "プロフィールを編集する", user_profiles_path(current_user)
+    .thread-create
+      %h5.btn.btn-outline-primary.mt-2
+        = link_to "新規スレッド作成", new_board_path
+    .user-info__withdrawal
+      %h5.btn.btn-outline-warning.mt-2
+        = link_to "アカウント削除", withdrawal_user_path
