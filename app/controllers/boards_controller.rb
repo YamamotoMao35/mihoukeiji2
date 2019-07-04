@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :move_to_index,except: [:index, :show]
 
   def index
-    @boards = Board.paginate(page: params[:page], per_page: 10).order('created_at ASC')
+    @boards = Board.includes(:user).page(params[:page]).per(10).order('created_at ASC')
   end
 
   def new

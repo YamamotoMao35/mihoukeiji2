@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :withdrawal, :destroy]
 
   def show
-    @boards = @user.boards.paginate(page: params[:page], per_page: 10).order('created_at ASC')
+    @boards = @user.boards.page(params[:page]).per(10).order('created_at ASC')
     @name = current_user.name
     @profile = current_user.profile
   end
