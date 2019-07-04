@@ -139,6 +139,14 @@ ja:
         one: "%{model}にエラーが発生しました"
         other: "%{model}に%{count}個のエラーが発生しました"
   helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "<b>%{total}</b>中の%{entry_name}を表示しています <b>%{first} - %{last}</b>"
+      one_page:
+        display_entries:
+          one: "<b>%{count}</b>レコード表示中です %{entry_name}"
+          other: "<b>%{count}</b>レコード表示中です %{entry_name}"
+          zero: "レコードが見つかりませんでした %{entry_name}"
     select:
       prompt: 選択してください
     submit:
@@ -205,3 +213,10 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      next: "次 &rsaquo;"
+      previous: "&lsaquo; 前"
+      truncate: "&hellip;"
