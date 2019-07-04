@@ -21,7 +21,7 @@
                 %table.table.table-striped.table-hover
                   = render partial: 'boards/description', collection: @boards, as: :board
           %tbody.text-center
-            = will_paginate @boards,previous_label: ' < 前へ', next_label: '次へ >'
+            = paginate @boards
       .user-info.col-sm-4.col-md-4.pull-right.mx-auto
         = render partial: 'mypage-sidebar'
 
