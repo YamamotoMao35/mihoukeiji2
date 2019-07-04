@@ -21,7 +21,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @messages = @board.messages
+    @messages = @board.messages.limit(1000).page(params[:page]).per(100).order('created_at ASC')
   end
 
   def update
