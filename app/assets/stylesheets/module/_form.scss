@@ -16,18 +16,3 @@ select {
 select::-ms-expand {
   display: none;
 }
-
-.pagination{
-  display: inline-block;
-  margin: 20px 0;
-  border-radius: 3px;
-  border: 1px $secondary solid;
-  background: #ffffff;
-  font-size: 20px;
-  .current{
-    margin: 0 4px;
-  }
-  a {
-    margin: 0 4px;
-  }
-}
