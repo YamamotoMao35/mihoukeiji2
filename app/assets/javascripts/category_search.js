@@ -65,8 +65,7 @@ $(function(){
     var category_id = $(this).attr("data-category-id");
     var category_name = $(this).attr("data-category-name");
     textField.val(`${category_name}`);
-    $(document).on("click", ".thread-new-btn", function(){
-      textField.val(`${category_id}`);
-    })
+    var category_hidden = $("#category-hidden");
+    category_hidden.val(`${category_id}`);
   })
 })
