@@ -16,3 +16,16 @@ select {
 select::-ms-expand {
   display: none;
 }
+
+#error_explanation{
+  h4{
+    color: #ff0000;
+  }
+  ul{
+    li{
+      font-size: 20px;
+      font-weight: bold;
+      color: $black;
+    }
+  }
+}
