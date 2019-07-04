@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update]
+  before_action :set_board, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index,except: [:index, :show]
 
   def index
@@ -36,6 +36,18 @@ class BoardsController < ApplicationController
       end
     else
       redirect_to root_path, alert: "スレッド情報の更新に失敗しました。"
+    end
+  end
+
+  def destroy
+    if @board.user_id == current_user.id
+      if @board.destroy
+        redirect_to root_path, notice: "スレッドを削除しました"
+      else
+        redirect_to edit_board_path, alert: "スレッドの削除に失敗しました"
+      end
+    else
+      redirect_to root_path, alert: "スレッドの削除に失敗しました。"
     end
   end
 
