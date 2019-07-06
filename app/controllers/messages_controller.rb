@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def create
     message = Message.new(message_params)
-    if message.save!
+    if message.save
       if user_signed_in?
         user_id = current_user.id
         message_user = Message.find(message.id)
