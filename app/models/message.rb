@@ -1,8 +1,9 @@
 class Message < ApplicationRecord
   validates :body, presence: true, length: {maximum: 1000}
-  validates :name, presence: true, length: { maximum: 10 }
+  validates :name, length: { maximum: 10 }
 
   belongs_to :board
+  belongs_to :user, optional: true
   has_one_attached :image
 
   private
