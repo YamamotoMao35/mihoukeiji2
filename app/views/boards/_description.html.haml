@@ -13,5 +13,6 @@
           %span
             #{board.categories[0].name}
         .board-edit-link
-          - if board.user_id == current_user.id
-            = link_to "スレッド編集", edit_board_path(board)
+          - if user_signed_in?
+            - if board.user_id == current_user.id
+              = link_to "スレッド編集", edit_board_path(board)
