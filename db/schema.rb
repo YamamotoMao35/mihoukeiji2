@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_104320) do
+ActiveRecord::Schema.define(version: 2019_07_06_133257) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -66,7 +66,9 @@ ActiveRecord::Schema.define(version: 2019_07_01_104320) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "email"
+    t.bigint "user_id"
     t.index ["board_id"], name: "index_messages_on_board_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,5 +103,6 @@ ActiveRecord::Schema.define(version: 2019_07_01_104320) do
   add_foreign_key "board_classifications", "categories"
   add_foreign_key "boards", "users"
   add_foreign_key "messages", "boards"
+  add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"
 end
