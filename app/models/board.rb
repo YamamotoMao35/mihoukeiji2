@@ -1,6 +1,6 @@
 class Board < ApplicationRecord
   validates :title, presence: true, length: {maximum: 60}
-  validates :description, presence: true, length: {maximum: 1000}
+  validates :description, presence: true, length: {maximum: 300}
   validates :categories, presence: true
 
   belongs_to :user
